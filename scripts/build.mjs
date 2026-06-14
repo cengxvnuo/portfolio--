@@ -17,12 +17,20 @@ const entries = [
   '\u9879\u76ee3\uff1a\u96e8\u6797\u5c55\u5385'
 ];
 const ignoredNames = new Set(['node_modules', '.git', 'dist']);
+const ignoredPathParts = [
+  'assets/images/00_零散案例播放/建筑设计',
+  'assets/images/00_零散案例播放/拼贴设计',
+  'assets/images/00_零散案例播放/全景图',
+  '项目2：晨间公馆/assets/video/1_stab_prob4.mov'
+];
 
 await generateDataBundle();
 await fs.rm(dist, { recursive: true, force: true });
 await fs.mkdir(dist, { recursive: true });
 
 async function copyFiltered(source, target) {
+  const relative = path.relative(root, source).replaceAll(path.sep, '/');
+  if (ignoredPathParts.some((part) => relative === part || relative.startsWith(`${part}/`))) return;
   const stat = await fs.stat(source);
   if (stat.isDirectory()) {
     const name = path.basename(source);

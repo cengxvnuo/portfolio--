@@ -201,6 +201,24 @@ async function blobFromResolvedUrl(url) {
   return null;
 }
 
+function canLoadImageUrl(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = url;
+  });
+}
+
+function loadImageElement(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('图片加载失败：' + url));
+    img.src = url;
+  });
+}
+
 /** 常见文件名笔误 → assets 中实际文件名 */
 const MEDIA_FILENAME_ALIASES = {
   '7次放大并退后.png': '2次放大并退后.png',
@@ -294,11 +312,6 @@ async function ensureLoadableMediaUrl(storedPath, room) {
   if (!original) return '';
   if (mediaBlobCache.has(original)) return mediaBlobCache.get(original);
 
-  if (isStaticDeployMediaPath(original) && location.protocol !== 'file:') {
-    const directUrl = resolveMediaUrl(original);
-    if (directUrl) return directUrl;
-  }
-
   const idbUrl = await tryLoadPanoramaFromIdb(original);
   if (idbUrl) {
     mediaBlobCache.set(original, idbUrl);
@@ -325,6 +338,11 @@ async function ensureLoadableMediaUrl(storedPath, room) {
     }
 
     for (const url of resolveMediaUrlVariants(candidate)) {
+      if (await canLoadImageUrl(url)) {
+        mediaBlobCache.set(original, url);
+        return url;
+      }
+
       const blob = await blobFromResolvedUrl(url);
       if (blob) {
         const blobUrl = URL.createObjectURL(blob);
@@ -1620,7 +1638,7 @@ async function renderPanoramaAsync(room, options = {}) {
 
   try {
     const initial = options.preserveView && viewState ? viewState : room.initialView;
-    viewer = pannellum.viewer('panorama', {
+    const viewerConfig = {
       type: 'equirectangular',
       panorama: panoLoadUrl,
       autoLoad: true,
@@ -1630,7 +1648,30 @@ async function renderPanoramaAsync(room, options = {}) {
       hfov: initial?.hfov ?? 105,
       sceneFadeDuration: galleryData.settings?.defaultSceneFadeDuration || 800,
       hotSpots
-    });
+    };
+
+    if (location.protocol === 'file:' && /^file:/i.test(String(panoLoadUrl))) {
+      viewerConfig.dynamic = true;
+      viewerConfig.panorama = await loadImageElement(panoLoadUrl);
+    }
+
+    viewer = pannellum.viewer('panorama', viewerConfig);
+
+    if (location.protocol === 'file:' && /^file:/i.test(String(panoLoadUrl))) {
+      let loaded = false;
+      try {
+        viewer.on('load', () => { loaded = true; });
+      } catch (eventErr) {
+        loaded = true;
+      }
+      window.setTimeout(() => {
+        if (!loaded && viewer) {
+          try { viewer.destroy(); } catch (destroyErr) { /* ignore */ }
+          viewer = null;
+          renderFlatPanoramaFallback(room, panoLoadUrl);
+        }
+      }, 5000);
+    }
   } catch (err) {
     console.error(err);
     if (panoLoadUrl) {

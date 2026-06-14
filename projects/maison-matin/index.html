@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maison Matin</title>
-    <meta http-equiv="refresh" content="0; url=../../项目2：晨间公馆/code.html" />
-    <script>
-      location.replace('../../项目2：晨间公馆/code.html');
-    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #050706;
+        color: #f5efe6;
+        font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      }
+      a { color: inherit; }
+    </style>
   </head>
   <body>
-    <a href="../../项目2：晨间公馆/code.html">进入晨间公馆项目</a>
+    <a id="fallback" href="../../项目2：晨间公馆/code.html">进入晨间公馆项目</a>
+    <script>
+      const target = new URL("../../项目2：晨间公馆/code.html", window.location.href);
+      document.getElementById("fallback").href = target.href;
+      window.location.replace(target.href);
+    </script>
   </body>
 </html>

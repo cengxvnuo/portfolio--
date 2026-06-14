@@ -112,7 +112,7 @@ window.__PORTFOLIO_DATA__ = {
       "category": "网页项目",
       "description": "围绕运动、青春、校园和产品视觉构建的品牌展示网页。",
       "coverImage": "项目1：青春运动品牌设计/assets/videos/节选.mp4",
-      "url": "projects/afterbell/",
+      "url": "projects/afterbell/index.html",
       "tags": [
         "品牌视觉",
         "运动海报",
@@ -128,7 +128,7 @@ window.__PORTFOLIO_DATA__ = {
       "category": "网页项目",
       "description": "以街角门店、早餐菜单和生活方式氛围为核心的交互体验网页。",
       "coverImage": "项目2：晨间公馆/assets/video/2-6月9日.mp4",
-      "url": "projects/maison-matin/",
+      "url": "projects/maison-matin/index.html",
       "tags": [
         "商业空间",
         "餐饮品牌",
@@ -144,7 +144,7 @@ window.__PORTFOLIO_DATA__ = {
       "category": "网页项目",
       "description": "以植物档案、展厅导览和数字展品为核心的沉浸式全景图展示网页。",
       "coverImage": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
-      "url": "projects/visual-lab/",
+      "url": "projects/visual-lab/index.html",
       "tags": [
         "数字展馆",
         "植物视觉",

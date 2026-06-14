@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visual Lab</title>
-    <meta http-equiv="refresh" content="0; url=../../项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html" />
-    <script>
-      location.replace('../../项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html');
-    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #050706;
+        color: #f5efe6;
+        font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      }
+      a { color: inherit; }
+    </style>
   </head>
   <body>
-    <a href="../../项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html">进入雨林展厅项目</a>
+    <a id="fallback" href="../../项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html">进入雨林展厅项目</a>
+    <script>
+      const target = new URL("../../项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html", window.location.href);
+      document.getElementById("fallback").href = target.href;
+      window.location.replace(target.href);
+    </script>
   </body>
 </html>
