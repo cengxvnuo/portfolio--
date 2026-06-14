@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>美食社区店 · 本地配置</title>
+  <style>
+    body { font-family: "Segoe UI", "PingFang SC", sans-serif; max-width: 720px; margin: 36px auto; padding: 0 20px; line-height: 1.6; }
+    button { padding: 10px 16px; margin: 6px 8px 6px 0; border-radius: 8px; border: 1px solid #4869a8; background: #28427a; color: #fff; cursor: pointer; }
+    pre { background: #f4f6fb; padding: 12px; border-radius: 8px; font-size: 13px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>美食社区店 · 本地文件配置</h1>
+  <p>在 <code>code.html</code> 编辑面板中点「应用」，会直接写入同目录 <code>editorConfig.boot.js</code>（无需运行任何本地服务）。</p>
+  <p>首次使用请先点「链接本地配置文件」选择 <code>editorConfig.boot.js</code>，保存后刷新页面。</p>
+  <button type="button" id="scanBtn">检测 editorConfig.boot.js</button>
+  <button type="button" id="openBtn">打开 code.html</button>
+  <pre id="log"></pre>
+  <script src="editorConfig.boot.js"></script>
+  <script>
+    const logEl = document.getElementById("log");
+    const log = (t) => { logEl.textContent += t + "\n"; };
+
+    document.getElementById("scanBtn").onclick = () => {
+      logEl.textContent = "";
+      const disk = window.__DISK_EDITOR_CONFIG__;
+      if (!disk) {
+        log("未找到 editorConfig.boot.js");
+        return;
+      }
+      log("版本: " + (disk.version || "?"));
+      log("保存时间: " + (disk.savedAt ? new Date(disk.savedAt).toLocaleString() : "未知"));
+      log("场景图: " + (disk.sceneImages?.length || 0));
+      log("状态: 从本地 editorConfig.boot.js 加载");
+    };
+
+    document.getElementById("openBtn").onclick = () => { location.href = "code.html"; };
+  </script>
+</body>
+</html>

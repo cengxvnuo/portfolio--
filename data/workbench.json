@@ -1,0 +1,182 @@
+{
+  "eyebrow": "方法系统",
+  "title": "Workflow AI 工作流",
+  "subtitle": "从需求简报到 AI 辅助设计决策。",
+  "coreStatement": "我将 AI 生成过程整理为可视化的项目决策地图：用主干记录核心目标，用分支探索不同方向，用节点沉淀 Prompt、素材、结果、问题与最终判断。",
+  "ctaLabel": "查看流程地图",
+  "workflowSteps": [
+    {
+      "number": "01",
+      "title": "Brief & Constraint",
+      "content": "项目目标 / 使用场景 / 受众 / 输出规格 / 不可变项",
+      "cnTitle": "需求与约束"
+    },
+    {
+      "number": "02",
+      "title": "Reference & Evidence",
+      "content": "参考图 / 风格来源 / 竞品 / 论文 / 官方资料 / 真实材质依据",
+      "cnTitle": "参考与证据"
+    },
+    {
+      "number": "03",
+      "title": "Concept Routing",
+      "content": "判断项目属于空间展陈、美食广告、运动品牌、视频故事板或网页交互。",
+      "cnTitle": "概念路径判断"
+    },
+    {
+      "number": "04",
+      "title": "Prompt Architecture",
+      "content": "主体 / 场景 / 构图 / 镜头 / 光线 / 材质 / 风格 / 负面约束 / 输出规格",
+      "cnTitle": "提示词架构"
+    },
+    {
+      "number": "05",
+      "title": "Branch Exploration",
+      "content": "风格分支 / 构图分支 / 色彩分支 / 材质分支 / 镜头分支 / 交互分支",
+      "cnTitle": "分支探索"
+    },
+    {
+      "number": "06",
+      "title": "Evaluation & Selection",
+      "content": "视觉完成度 / 真实度 / 品牌一致性 / 可读性 / 商业可用性 / 技术风险",
+      "cnTitle": "评估与筛选"
+    },
+    {
+      "number": "07",
+      "title": "Iteration & Repair",
+      "content": "局部修改 / 材质修复 / 结构修正 / 文案后置 / 网页叠加 / 视频转场优化",
+      "cnTitle": "迭代与修复"
+    },
+    {
+      "number": "08",
+      "title": "Final Packaging",
+      "content": "网页展示 / PDF 作品集 / 视频故事板 / 交互 Demo / Prompt 档案",
+      "cnTitle": "最终打包"
+    },
+    {
+      "number": "09",
+      "title": "Skill Archive",
+      "content": "可复用提示词 / 工作流模板 / 失败案例 / 复盘结论",
+      "cnTitle": "技能归档"
+    }
+  ],
+  "processMap": {
+    "core": {
+      "id": "core",
+      "title": "Project Core Brief",
+      "detail": {
+        "goal": "明确项目真正要解决的问题。",
+        "input": "客户需求、使用场景、受众、输出规格。",
+        "tool": "访谈记录、ChatGPT、项目资料表。",
+        "promptLogic": "先约束目标，再拆分视觉、内容、交互与交付维度。",
+        "output": "一份稳定的核心 Brief。",
+        "designDecision": "所有生成分支都必须回到核心目标进行判断。"
+      }
+    },
+    "branches": [
+      {
+        "id": "visual-direction",
+        "title": "Visual Direction",
+        "children": [
+          "风格来源",
+          "镜头与构图",
+          "色彩气质"
+        ],
+        "detail": {
+          "goal": "确定项目的视觉方向和第一印象。",
+          "input": "参考图、品牌关键词、竞品、真实材质依据。",
+          "tool": "Moodboard、Midjourney、Pinterest、官方资料。",
+          "promptLogic": "把风格拆成镜头、光线、材质、色彩、空间距离和情绪。",
+          "output": "可复用的视觉方向板。",
+          "designDecision": "只保留能服务品牌目标的风格，不追求单纯好看。"
+        }
+      },
+      {
+        "id": "prompt-system",
+        "title": "Prompt System",
+        "children": [
+          "主体结构",
+          "负面约束",
+          "输出规格"
+        ],
+        "detail": {
+          "goal": "建立可复用、可迭代的提示词结构。",
+          "input": "主体、场景、构图、镜头、光线、材质、风格、限制条件。",
+          "tool": "ChatGPT、Midjourney、ComfyUI、提示词档案。",
+          "promptLogic": "先写稳定骨架，再用变量控制分支探索和局部修复。",
+          "output": "项目专属提示词模板。",
+          "designDecision": "提示词不是一次性文本，而是项目的控制系统。"
+        }
+      },
+      {
+        "id": "asset-material",
+        "title": "Asset & Material",
+        "children": [
+          "参考素材",
+          "真实材质",
+          "上传图像"
+        ],
+        "detail": {
+          "goal": "让生成结果具有可验证的材质和信息依据。",
+          "input": "产品图、空间照片、材质样本、展品资料。",
+          "tool": "本地素材库、Photoshop、图像生成工具。",
+          "promptLogic": "把素材作为结构和材质依据，而不是仅作为风格提示。",
+          "output": "项目素材包与可追溯路径。",
+          "designDecision": "重要素材必须保留本地相对路径，方便部署与复盘。"
+        }
+      },
+      {
+        "id": "interaction-storyboard",
+        "title": "Interaction / Storyboard",
+        "children": [
+          "页面动线",
+          "视频转场",
+          "故事节奏"
+        ],
+        "detail": {
+          "goal": "把静态图像组织成可浏览、可展示的体验。",
+          "input": "页面结构、视频片段、镜头顺序、交互节点。",
+          "tool": "HTML、CSS、Runway、剪辑工具。",
+          "promptLogic": "将画面关系转成浏览顺序、悬浮反馈和故事节奏。",
+          "output": "网页 Demo、视频故事板或交互原型。",
+          "designDecision": "交互必须辅助理解作品，而不是遮挡作品。"
+        }
+      },
+      {
+        "id": "qa-iteration",
+        "title": "QA & Iteration",
+        "children": [
+          "真实度检查",
+          "品牌一致性",
+          "技术风险"
+        ],
+        "detail": {
+          "goal": "筛掉不稳定、不可信或不可交付的结果。",
+          "input": "候选图、失败案例、用户反馈、技术限制。",
+          "tool": "人工评审、局部重绘、ComfyUI、浏览器检查。",
+          "promptLogic": "围绕问题建立修复提示词，而不是盲目重新生成。",
+          "output": "可交付版本与问题记录。",
+          "designDecision": "选择标准优先级高于生成数量。"
+        }
+      },
+      {
+        "id": "final-output",
+        "title": "Final Output",
+        "children": [
+          "网页展示",
+          "PDF 作品集",
+          "Prompt 档案"
+        ],
+        "detail": {
+          "goal": "把项目整理成可展示、可迁移、可复盘的最终成果。",
+          "input": "定稿图、视频、文字说明、提示词、过程记录。",
+          "tool": "本地网页、PDF、GitHub Pages、作品集数据文件。",
+          "promptLogic": "将结果、过程和判断一起归档，而不只保存成图。",
+          "output": "网页作品页、案例详情、PDF 与提示词档案。",
+          "designDecision": "最终交付要能被别人理解，也要能被自己复用。"
+        }
+      }
+    ]
+  },
+  "selectedNodeId": "prompt-system"
+}

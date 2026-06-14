@@ -1,0 +1,105 @@
+{
+  "brand": "AIGC 作品集",
+  "heroTitle": "AIGC Visual Portfolio",
+  "heroSubtitle": "用人工智能辅助视觉设计、空间叙事与作品交付流程。",
+  "heroStatement": "结合空间设计背景的系统性思维，探索人工智能在商业空间、视觉实验、摄影专题与网页项目中的可复用方法。",
+  "heroMedia": "assets/uploads/1781343247057-hero2.mp4",
+  "identityTags": [
+    "建筑学思维",
+    "视觉工程",
+    "提示词策划",
+    "本地作品库"
+  ],
+  "navigation": [
+    {
+      "label": "首页",
+      "target": "home"
+    },
+    {
+      "label": "网页项目",
+      "target": "projects"
+    },
+    {
+      "label": "工作台",
+      "target": "workbench"
+    },
+    {
+      "label": "作品展示",
+      "target": "works"
+    },
+    {
+      "label": "作品分类",
+      "target": "categories"
+    },
+    {
+      "label": "关于",
+      "target": "about"
+    }
+  ],
+  "about": {
+    "eyebrow": "ABOUT CREATOR",
+    "title": "关于我",
+    "englishTitle": "ABOUT ME",
+    "subtitle": "AIGC VISUAL DESIGNER / ARCHITECTURAL THINKING",
+    "image": "assets/about/6月14日.mp4",
+    "paragraphs": [
+      "空间设计背景，理解空间、尺度、材质、光影、场景氛围与设计逻辑。",
+      "基于设计项目中长期积累的空间审美、视觉表达和方案提案经验，能够拆解模糊的设计需求、高效沟通方案构思、整理信息，并将抽象想法转化为可视化表达。",
+      "能够使用 AIGC 辅助完成概念方向探索、风格参考生成、空间场景表达、文案优化和设计灵感拓展。"
+    ],
+    "focus": [
+      "品牌视觉",
+      "空间叙事",
+      "AIGC 工作流",
+      "网页作品集",
+      "视频故事板"
+    ],
+    "tools": [
+      "GPT",
+      "Gemini",
+      "Claude",
+      "ComfyUI",
+      "Coze",
+      "Feishu",
+      "Cursor",
+      "Codex",
+      "Midjourney"
+    ],
+    "contact": [
+      "Email",
+      "小红书",
+      "Portfolio",
+      "PDF Download"
+    ],
+    "statement": "AI 负责扩展可能性，设计师负责判断可用性。"
+  },
+  "toolStack": [
+    "ChatGPT",
+    "Midjourney",
+    "ComfyUI",
+    "Photoshop",
+    "Nano banana",
+    "codex",
+    "Claude",
+    "cursor"
+  ],
+  "contacts": [
+    {
+      "label": "邮箱",
+      "value": "hello@aigcstudio.com",
+      "url": "mailto:hello@aigcstudio.com"
+    },
+    {
+      "label": "小红书",
+      "value": "AIGC 作品集",
+      "url": "#"
+    },
+    {
+      "label": "作品集",
+      "value": "本地网页端",
+      "url": "#"
+    }
+  ],
+  "pdfUrl": "assets/AIGC-portfolio.pdf",
+  "masonryFillerText": "AIGC PORTFOLIO"
+}

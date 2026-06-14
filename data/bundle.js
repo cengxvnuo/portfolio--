@@ -1,0 +1,1060 @@
+window.__PORTFOLIO_DATA__ = {
+  "site": {
+    "brand": "AIGC 作品集",
+    "heroTitle": "AIGC Visual Portfolio",
+    "heroSubtitle": "用人工智能辅助视觉设计、空间叙事与作品交付流程。",
+    "heroStatement": "结合空间设计背景的系统性思维，探索人工智能在商业空间、视觉实验、摄影专题与网页项目中的可复用方法。",
+    "heroMedia": "assets/uploads/1781343247057-hero2.mp4",
+    "identityTags": [
+      "建筑学思维",
+      "视觉工程",
+      "提示词策划",
+      "本地作品库"
+    ],
+    "navigation": [
+      {
+        "label": "首页",
+        "target": "home"
+      },
+      {
+        "label": "网页项目",
+        "target": "projects"
+      },
+      {
+        "label": "工作台",
+        "target": "workbench"
+      },
+      {
+        "label": "作品展示",
+        "target": "works"
+      },
+      {
+        "label": "作品分类",
+        "target": "categories"
+      },
+      {
+        "label": "关于",
+        "target": "about"
+      }
+    ],
+    "about": {
+      "eyebrow": "ABOUT CREATOR",
+      "title": "关于我",
+      "englishTitle": "ABOUT ME",
+      "subtitle": "AIGC VISUAL DESIGNER / ARCHITECTURAL THINKING",
+      "image": "assets/about/6月14日.mp4",
+      "paragraphs": [
+        "空间设计背景，理解空间、尺度、材质、光影、场景氛围与设计逻辑。",
+        "基于设计项目中长期积累的空间审美、视觉表达和方案提案经验，能够拆解模糊的设计需求、高效沟通方案构思、整理信息，并将抽象想法转化为可视化表达。",
+        "能够使用 AIGC 辅助完成概念方向探索、风格参考生成、空间场景表达、文案优化和设计灵感拓展。"
+      ],
+      "focus": [
+        "品牌视觉",
+        "空间叙事",
+        "AIGC 工作流",
+        "网页作品集",
+        "视频故事板"
+      ],
+      "tools": [
+        "GPT",
+        "Gemini",
+        "Claude",
+        "ComfyUI",
+        "Coze",
+        "Feishu",
+        "Cursor",
+        "Codex",
+        "Midjourney"
+      ],
+      "contact": [
+        "Email",
+        "小红书",
+        "Portfolio",
+        "PDF Download"
+      ],
+      "statement": "AI 负责扩展可能性，设计师负责判断可用性。"
+    },
+    "toolStack": [
+      "ChatGPT",
+      "Midjourney",
+      "ComfyUI",
+      "Photoshop",
+      "Nano banana",
+      "codex",
+      "Claude",
+      "cursor"
+    ],
+    "contacts": [
+      {
+        "label": "邮箱",
+        "value": "hello@aigcstudio.com",
+        "url": "mailto:hello@aigcstudio.com"
+      },
+      {
+        "label": "小红书",
+        "value": "AIGC 作品集",
+        "url": "#"
+      },
+      {
+        "label": "作品集",
+        "value": "本地网页端",
+        "url": "#"
+      }
+    ],
+    "pdfUrl": "assets/AIGC-portfolio.pdf",
+    "masonryFillerText": "AIGC PORTFOLIO"
+  },
+  "projects": [
+    {
+      "id": "afterbell",
+      "title": "青春运动品牌设计",
+      "subtitle": "校园运动服饰品牌视觉系统",
+      "category": "网页项目",
+      "description": "围绕运动、青春、校园和产品视觉构建的品牌展示网页。",
+      "coverImage": "项目1：青春运动品牌设计/assets/videos/节选.mp4",
+      "url": "projects/afterbell/",
+      "tags": [
+        "品牌视觉",
+        "运动海报",
+        "产品系统"
+      ],
+      "order": 1,
+      "isVisible": true
+    },
+    {
+      "id": "maison-matin",
+      "title": "晨间公馆",
+      "subtitle": "咖啡与轻食品牌网页",
+      "category": "网页项目",
+      "description": "以街角门店、早餐菜单和生活方式氛围为核心的交互体验网页。",
+      "coverImage": "项目2：晨间公馆/assets/video/2-6月9日.mp4",
+      "url": "projects/maison-matin/",
+      "tags": [
+        "商业空间",
+        "餐饮品牌",
+        "场景叙事"
+      ],
+      "order": 2,
+      "isVisible": true
+    },
+    {
+      "id": "rainforest-gallery",
+      "title": "雨林展厅",
+      "subtitle": "植物数字展馆网页",
+      "category": "网页项目",
+      "description": "以植物档案、展厅导览和数字展品为核心的沉浸式全景图展示网页。",
+      "coverImage": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
+      "url": "projects/visual-lab/",
+      "tags": [
+        "数字展馆",
+        "植物视觉",
+        "交互展示"
+      ],
+      "order": 3,
+      "isVisible": true
+    }
+  ],
+  "workbench": {
+    "eyebrow": "方法系统",
+    "title": "Workflow AI 工作流",
+    "subtitle": "从需求简报到 AI 辅助设计决策。",
+    "coreStatement": "我将 AI 生成过程整理为可视化的项目决策地图：用主干记录核心目标，用分支探索不同方向，用节点沉淀 Prompt、素材、结果、问题与最终判断。",
+    "ctaLabel": "查看流程地图",
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Brief & Constraint",
+        "content": "项目目标 / 使用场景 / 受众 / 输出规格 / 不可变项",
+        "cnTitle": "需求与约束"
+      },
+      {
+        "number": "02",
+        "title": "Reference & Evidence",
+        "content": "参考图 / 风格来源 / 竞品 / 论文 / 官方资料 / 真实材质依据",
+        "cnTitle": "参考与证据"
+      },
+      {
+        "number": "03",
+        "title": "Concept Routing",
+        "content": "判断项目属于空间展陈、美食广告、运动品牌、视频故事板或网页交互。",
+        "cnTitle": "概念路径判断"
+      },
+      {
+        "number": "04",
+        "title": "Prompt Architecture",
+        "content": "主体 / 场景 / 构图 / 镜头 / 光线 / 材质 / 风格 / 负面约束 / 输出规格",
+        "cnTitle": "提示词架构"
+      },
+      {
+        "number": "05",
+        "title": "Branch Exploration",
+        "content": "风格分支 / 构图分支 / 色彩分支 / 材质分支 / 镜头分支 / 交互分支",
+        "cnTitle": "分支探索"
+      },
+      {
+        "number": "06",
+        "title": "Evaluation & Selection",
+        "content": "视觉完成度 / 真实度 / 品牌一致性 / 可读性 / 商业可用性 / 技术风险",
+        "cnTitle": "评估与筛选"
+      },
+      {
+        "number": "07",
+        "title": "Iteration & Repair",
+        "content": "局部修改 / 材质修复 / 结构修正 / 文案后置 / 网页叠加 / 视频转场优化",
+        "cnTitle": "迭代与修复"
+      },
+      {
+        "number": "08",
+        "title": "Final Packaging",
+        "content": "网页展示 / PDF 作品集 / 视频故事板 / 交互 Demo / Prompt 档案",
+        "cnTitle": "最终打包"
+      },
+      {
+        "number": "09",
+        "title": "Skill Archive",
+        "content": "可复用提示词 / 工作流模板 / 失败案例 / 复盘结论",
+        "cnTitle": "技能归档"
+      }
+    ],
+    "processMap": {
+      "core": {
+        "id": "core",
+        "title": "Project Core Brief",
+        "detail": {
+          "goal": "明确项目真正要解决的问题。",
+          "input": "客户需求、使用场景、受众、输出规格。",
+          "tool": "访谈记录、ChatGPT、项目资料表。",
+          "promptLogic": "先约束目标，再拆分视觉、内容、交互与交付维度。",
+          "output": "一份稳定的核心 Brief。",
+          "designDecision": "所有生成分支都必须回到核心目标进行判断。"
+        }
+      },
+      "branches": [
+        {
+          "id": "visual-direction",
+          "title": "Visual Direction",
+          "children": [
+            "风格来源",
+            "镜头与构图",
+            "色彩气质"
+          ],
+          "detail": {
+            "goal": "确定项目的视觉方向和第一印象。",
+            "input": "参考图、品牌关键词、竞品、真实材质依据。",
+            "tool": "Moodboard、Midjourney、Pinterest、官方资料。",
+            "promptLogic": "把风格拆成镜头、光线、材质、色彩、空间距离和情绪。",
+            "output": "可复用的视觉方向板。",
+            "designDecision": "只保留能服务品牌目标的风格，不追求单纯好看。"
+          }
+        },
+        {
+          "id": "prompt-system",
+          "title": "Prompt System",
+          "children": [
+            "主体结构",
+            "负面约束",
+            "输出规格"
+          ],
+          "detail": {
+            "goal": "建立可复用、可迭代的提示词结构。",
+            "input": "主体、场景、构图、镜头、光线、材质、风格、限制条件。",
+            "tool": "ChatGPT、Midjourney、ComfyUI、提示词档案。",
+            "promptLogic": "先写稳定骨架，再用变量控制分支探索和局部修复。",
+            "output": "项目专属提示词模板。",
+            "designDecision": "提示词不是一次性文本，而是项目的控制系统。"
+          }
+        },
+        {
+          "id": "asset-material",
+          "title": "Asset & Material",
+          "children": [
+            "参考素材",
+            "真实材质",
+            "上传图像"
+          ],
+          "detail": {
+            "goal": "让生成结果具有可验证的材质和信息依据。",
+            "input": "产品图、空间照片、材质样本、展品资料。",
+            "tool": "本地素材库、Photoshop、图像生成工具。",
+            "promptLogic": "把素材作为结构和材质依据，而不是仅作为风格提示。",
+            "output": "项目素材包与可追溯路径。",
+            "designDecision": "重要素材必须保留本地相对路径，方便部署与复盘。"
+          }
+        },
+        {
+          "id": "interaction-storyboard",
+          "title": "Interaction / Storyboard",
+          "children": [
+            "页面动线",
+            "视频转场",
+            "故事节奏"
+          ],
+          "detail": {
+            "goal": "把静态图像组织成可浏览、可展示的体验。",
+            "input": "页面结构、视频片段、镜头顺序、交互节点。",
+            "tool": "HTML、CSS、Runway、剪辑工具。",
+            "promptLogic": "将画面关系转成浏览顺序、悬浮反馈和故事节奏。",
+            "output": "网页 Demo、视频故事板或交互原型。",
+            "designDecision": "交互必须辅助理解作品，而不是遮挡作品。"
+          }
+        },
+        {
+          "id": "qa-iteration",
+          "title": "QA & Iteration",
+          "children": [
+            "真实度检查",
+            "品牌一致性",
+            "技术风险"
+          ],
+          "detail": {
+            "goal": "筛掉不稳定、不可信或不可交付的结果。",
+            "input": "候选图、失败案例、用户反馈、技术限制。",
+            "tool": "人工评审、局部重绘、ComfyUI、浏览器检查。",
+            "promptLogic": "围绕问题建立修复提示词，而不是盲目重新生成。",
+            "output": "可交付版本与问题记录。",
+            "designDecision": "选择标准优先级高于生成数量。"
+          }
+        },
+        {
+          "id": "final-output",
+          "title": "Final Output",
+          "children": [
+            "网页展示",
+            "PDF 作品集",
+            "Prompt 档案"
+          ],
+          "detail": {
+            "goal": "把项目整理成可展示、可迁移、可复盘的最终成果。",
+            "input": "定稿图、视频、文字说明、提示词、过程记录。",
+            "tool": "本地网页、PDF、GitHub Pages、作品集数据文件。",
+            "promptLogic": "将结果、过程和判断一起归档，而不只保存成图。",
+            "output": "网页作品页、案例详情、PDF 与提示词档案。",
+            "designDecision": "最终交付要能被别人理解，也要能被自己复用。"
+          }
+        }
+      ]
+    },
+    "selectedNodeId": "prompt-system"
+  },
+  "categories": [
+    {
+      "id": "commercial",
+      "title": "商业空间与品牌视觉",
+      "englishTitle": "商业空间与品牌视觉",
+      "description": "面向品牌门店、餐饮空间、产品陈列和商业传播的 AIGC 视觉提案。",
+      "tags": [
+        "品牌",
+        "空间",
+        "商业"
+      ],
+      "order": 1,
+      "isVisible": true
+    },
+    {
+      "id": "宣传海报",
+      "title": "宣传海报设计",
+      "englishTitle": "宣传海报设计",
+      "description": "",
+      "tags": [
+        "提示词",
+        "海报"
+      ],
+      "order": 2,
+      "isVisible": true
+    },
+    {
+      "id": "人像摄影",
+      "title": "AIGC 摄影专题",
+      "englishTitle": "AIGC 摄影专题",
+      "description": "以真实摄影语言探索人物、植物、空间与情绪表达。",
+      "tags": [
+        "摄影",
+        "真实感",
+        "场景"
+      ],
+      "order": 3,
+      "isVisible": true
+    },
+    {
+      "id": "创意发散",
+      "title": "其他作品集",
+      "englishTitle": "创意发散",
+      "description": "品牌指导的社交打卡参考",
+      "tags": [
+        "AIGC"
+      ],
+      "order": 4,
+      "isVisible": true
+    }
+  ],
+  "works": [
+    {
+      "id": "maison-facade",
+      "categoryId": "commercial",
+      "title": "瓦楞板黑胶唱片快闪店",
+      "subtitle": "快闪店/品牌识别/商场临展",
+      "description": "围绕咖啡轻食品牌的第一眼识别，推演门店立面、橱窗陈列、营业信息和街道氛围。",
+      "coverImage": "assets/uploads/1781344822195-黑胶唱片快闪店设计.png",
+      "images": [],
+      "tags": [
+        "快闪店",
+        "品牌识别"
+      ],
+      "tools": [
+        "Gemini",
+        "Nano banana"
+      ],
+      "promptLogic": "创作一个“瓦楞纸黑胶图书馆 / Corrugated Vinyl Library”快闪空间。\n场景位于现代商场中庭或公共文化空间。主体是一组由牛皮纸色瓦楞纸板和蜂窝纸板搭建的弧形黑胶陈列墙，形成半圆形或环形浏览空间。整体空间像一个临时搭建的纸板声音档案馆，而不是普通唱片店。\n空间结构、材料与工艺、视觉氛围、人物互动、限制。",
+      "processNotes": "通过多轮生成筛选快闪店空间按层次，再用局部修正处理文字区域和商业信息层级。",
+      "caseSections": [
+        {
+          "id": "maison-facade-1",
+          "type": "text",
+          "title": "设计目标",
+          "content": "让门店在商场中被快速识别，同时保留可落地的材料、灯光和橱窗逻辑。",
+          "image": "",
+          "images": "",
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "order": 1,
+      "isFeatured": true,
+      "isVisible": true,
+      "previewRatio": "16 / 9"
+    },
+    {
+      "id": "maison-interior",
+      "categoryId": "commercial",
+      "title": "晨间公馆室内氛围",
+      "subtitle": "早餐空间与菜单体验",
+      "description": "从室内光线、菜单陈列、产品上桌到消费动线，构建一组完整的餐饮品牌体验视觉。",
+      "coverImage": "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+      "images": [
+        "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+        "项目2：晨间公馆/assets/picture/点餐页面.png",
+        "项目2：晨间公馆/assets/picture/上桌.png"
+      ],
+      "tags": [
+        "餐饮空间",
+        "菜单",
+        "生活方式"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Midjourney",
+        "Photoshop"
+      ],
+      "promptLogic": "用清晨自然光、木质桌面、轻食产品和低饱和色彩建立品牌气质。",
+      "processNotes": "先统一室内色调，再补充菜单、上桌和过程记录，让案例具备完整叙事。",
+      "caseSections": [
+        {
+          "id": "maison-interior-1",
+          "type": "gallery",
+          "title": "空间与产品",
+          "images": [
+            "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+            "项目2：晨间公馆/assets/picture/上桌-2.png",
+            "项目2：晨间公馆/assets/picture/点餐页面.png"
+          ],
+          "content": "",
+          "image": "",
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "order": 2,
+      "isFeatured": false,
+      "isVisible": true,
+      "previewRatio": "16 / 9"
+    },
+    {
+      "id": "work-1781345428185",
+      "categoryId": "commercial",
+      "title": "EASY眼镜x橙光几何",
+      "subtitle": "几何生光，自在出彩",
+      "description": "以几何镜框与橙色镜片为灵感，EASY 眼镜推出虚构联名企划「橙光几何」。项目以产品设计、都市光影与高级日常风格为核心，建立一套可用于社交媒体、户外广告、零售陈列与包装的视觉表达",
+      "coverImage": "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_29.png",
+      "images": [
+        "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_33.png",
+        "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_44.png"
+      ],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "把镜片的圆形光感与镜框的阶梯轮廓，转译成品牌级视觉语言。通过场暖橙色透镜、极简构图与时装化人物表达，形成兼具设计感、都市感与收藏感的联名叙事",
+      "caseSections": [
+        {
+          "id": "section-1781345752857",
+          "type": "gallery",
+          "title": "详情页",
+          "content": "",
+          "image": "assets/images/商业空间与品牌视觉/眼镜广告",
+          "images": [
+            "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_33.png",
+            "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_44.png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "3 / 2",
+      "order": 3,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781357306961",
+      "categoryId": "宣传海报",
+      "title": "时间层积海报设计",
+      "subtitle": "博物馆展览海报",
+      "description": "作品简介",
+      "coverImage": "assets/images/海报设计/时间层积/002-时间层积型展览海报 (1).png",
+      "images": [
+        "assets/images/海报设计/时间层积/002-时间层积型展览海报 (2).png",
+        "assets/images/海报设计/时间层积/ChatGPT Image 2026年6月2日 18_04_42.png"
+      ],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [
+        {
+          "id": "section-1781357662104",
+          "type": "gallery",
+          "title": "系列作品",
+          "content": "",
+          "image": "assets/images/海报设计/时间层积",
+          "images": [
+            "assets/images/海报设计/时间层积/002-时间层积型展览海报 (2).png",
+            "assets/images/海报设计/时间层积/ChatGPT Image 2026年6月2日 18_04_42.png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "4 / 5",
+      "order": 4,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "sports-poster-lab",
+      "categoryId": "宣传海报",
+      "title": "甜点海报",
+      "subtitle": "动作、速度与冲击感",
+      "description": "围绕篮球、排球、足球、田径等运动项目，测试动作瞬间、镜头冲击和图像能量。",
+      "coverImage": "assets/images/海报设计/ChatGPT Image 2026年6月12日 21_32_57.png",
+      "images": [],
+      "tags": [
+        "海报",
+        "动作",
+        "构图"
+      ],
+      "tools": [
+        "Midjourney",
+        "Photoshop"
+      ],
+      "promptLogic": "用超广角、运动模糊、决定性动作和高对比背景建立速度感。",
+      "processNotes": "多项目并行测试，用统一画面语法保持品牌一致性。",
+      "caseSections": [
+        {
+          "id": "sports-poster-1",
+          "type": "gallery",
+          "title": "运动项目组图",
+          "images": [
+            "assets/images/海报设计/ChatGPT Image 2026年6月12日 21_32_57.png"
+          ],
+          "content": "",
+          "image": "",
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "order": 5,
+      "isFeatured": true,
+      "isVisible": true,
+      "previewRatio": "4 / 5"
+    },
+    {
+      "id": "work-1781347040208",
+      "categoryId": "人像摄影",
+      "title": "亲子拍立得",
+      "subtitle": "日常氛围",
+      "description": "作品简介",
+      "coverImage": "assets/images/AIGC摄影专题/RX007-日常拍立得  (2).png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "4 / 5",
+      "order": 6,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781347113648",
+      "categoryId": "人像摄影",
+      "title": "生日写真社交打卡",
+      "subtitle": "社交宣传拍摄指南",
+      "description": "作品简介",
+      "coverImage": "assets/images/AIGC摄影专题/RX079-花房生日宴写真 (3).jpeg",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "4 / 5",
+      "order": 7,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781347507672",
+      "categoryId": "宣传海报",
+      "title": "手绘风格美食海报",
+      "subtitle": "作品副标题",
+      "description": "作品简介",
+      "coverImage": "assets/videos/手绘涂鸦视频2.mp4",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "4 / 5",
+      "order": 8,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781353795107",
+      "categoryId": "创意发散",
+      "title": "插画",
+      "subtitle": "作品副标题",
+      "description": "作品简介",
+      "coverImage": "assets/images/00_零散案例播放/插画/cengxvnuo_a_cat_--chaos_12_--ar_32_--sref_806237624_--sw_500__b9607ded-9ecd-4fdc-890c-4d74496906ea_3.png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "MJ"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [
+        {
+          "id": "section-1781362097192",
+          "type": "gallery",
+          "title": "系列",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "assets/images/00_零散案例播放/插画",
+          "images": [
+            "assets/images/00_零散案例播放/插画/cengxvnuo_2.5D_--chaos_12_--ar_32_--sref_806237624_--sw_500_-_9ea94e0e-c6f6-41ab-8456-a15caecdeeb8_2.png",
+            "assets/images/00_零散案例播放/插画/cengxvnuo_2.5D_--chaos_12_--ar_32_--sref_806237624_--sw_500_-_9ea94e0e-c6f6-41ab-8456-a15caecdeeb8_3.png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "16 / 9",
+      "order": 9,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781356959696",
+      "categoryId": "宣传海报",
+      "title": "美食盲盒设计",
+      "subtitle": "拆盲盒",
+      "description": "作品简介",
+      "coverImage": "assets/videos/盲盒视频.mp4",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT",
+        "豆包",
+        "剪映"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "16 / 9",
+      "order": 10,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "afterbell-brand-world",
+      "categoryId": "宣传海报",
+      "title": "青春运动品牌AFTERBELL",
+      "subtitle": "校园运动服饰的主视觉系统",
+      "description": "围绕运动社群、校园视觉和服饰产品，建立一套高能量品牌世界观。",
+      "coverImage": "assets/cover/QCHB20 (3).png",
+      "images": [
+        "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉 (2).png",
+        "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉2 (4).png",
+        "项目1：青春运动品牌设计/assets/cases/AFTERBELL 校园运动服饰品牌的高级时尚杂志跨页海报 4：5.png"
+      ],
+      "tags": [
+        "品牌系统",
+        "运动视觉",
+        "校园"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Midjourney",
+        "Photoshop"
+      ],
+      "promptLogic": "把角色、运动项目、服饰层次、校园场景和高对比动作姿态拆成可复用参数。",
+      "processNotes": "通过主视觉、产品图和跨页海报建立品牌语法，再延展到具体运动场景。",
+      "caseSections": [
+        {
+          "id": "afterbell-brand-1",
+          "type": "gallery",
+          "title": "品牌主视觉",
+          "images": [
+            "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉 (2).png",
+            "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉2 (4).png"
+          ],
+          "content": "",
+          "image": "",
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "order": 11,
+      "isFeatured": true,
+      "isVisible": true,
+      "previewRatio": "4 / 5"
+    },
+    {
+      "id": "work-1781359699331",
+      "categoryId": "宣传海报",
+      "title": "旅行海报",
+      "subtitle": "",
+      "description": "作品简介",
+      "coverImage": "assets/images/海报设计/ChatGPT Image 2026年6月6日 16_20_02.png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "1 / 1",
+      "order": 12,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781360040872",
+      "categoryId": "宣传海报",
+      "title": "复印风格logo海报设计",
+      "subtitle": "复印风格",
+      "description": "作品简介",
+      "coverImage": "assets/videos/视频生成 (1).mp4",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [
+        {
+          "id": "section-1781360113704",
+          "type": "gallery",
+          "title": "新段落",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "assets/images/海报设计",
+          "images": [
+            "assets/images/海报设计/AFTERBELL._Act_as_a_Brutalist_202605241125.jpeg",
+            "assets/images/海报设计/AFTERBELL._Act_as_a_Brutalist_202605241137 (1).jpeg"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "4 / 5",
+      "order": 13,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781423978693",
+      "categoryId": "宣传海报",
+      "title": "旅行vlog",
+      "subtitle": "旅行海报",
+      "description": "作品简介",
+      "coverImage": "assets/images/海报设计/旅行海报.png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "4 / 5",
+      "order": 14,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781361488168",
+      "categoryId": "人像摄影",
+      "title": "氛围人像",
+      "subtitle": "高饱和度",
+      "description": "作品简介",
+      "coverImage": "assets/videos/氛围人像.mp4",
+      "images": [],
+      "tags": [
+        "人像摄影",
+        "氛围感"
+      ],
+      "tools": [
+        "MJ"
+      ],
+      "promptLogic": "--chaos 22 --ar 3:2 --sref 228235173 --sw 500 --stylize 500 --hd --v 8.1",
+      "processNotes": "孤独的氛围表达",
+      "caseSections": [
+        {
+          "id": "section-1781361620944",
+          "type": "gallery",
+          "title": "同组作品",
+          "content": "",
+          "image": "assets/images/AIGC摄影专题",
+          "images": [
+            "assets/images/AIGC摄影专题/一个孤独的人--chaos 22 --ar 32 --sref 228235173 --sw 500 --stylize 500 --hd --v 8.1 (2).png",
+            "assets/images/AIGC摄影专题/一个孤独的人--chaos 22 --ar 32 --sref 228235173 --sw 500 --stylize 500 --hd --v 8.1 (3).png",
+            "assets/images/AIGC摄影专题/5a236dd2-ac31-4562-9500-0e9455948c47_0_2.png",
+            "assets/images/AIGC摄影专题/一个孤独的人--chaos 22 --ar 32 --sref 228235173 --sw 500 --stylize 500 --hd --v 8.1 (4).png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        },
+        {
+          "id": "section-1781427651668",
+          "type": "text",
+          "title": "新段落",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "",
+          "images": [],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "16 / 9",
+      "order": 15,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781362341336",
+      "categoryId": "commercial",
+      "title": "服装产品",
+      "subtitle": "材质",
+      "description": "作品简介",
+      "coverImage": "assets/images/商业空间与品牌视觉/cengxvnuo_2.5D_--chaos_10_--ar_12581523_--exp_10_--sref_53215_e906042f-f823-4aeb-95c8-d56e2ab33d52_2.png",
+      "images": [],
+      "tags": [
+        "服装"
+      ],
+      "tools": [
+        "MJ"
+      ],
+      "promptLogic": "2.5D --chaos 10 --exp 10 --sref53215",
+      "processNotes": "设计理念",
+      "caseSections": [
+        {
+          "id": "section-1781362415024",
+          "type": "gallery",
+          "title": "系列作品",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "assets/images/商业空间与品牌视觉",
+          "images": [
+            "assets/images/商业空间与品牌视觉/cengxvnuo_2.5D_--chaos_10_--ar_12581523_--exp_10_--sref_53215_e906042f-f823-4aeb-95c8-d56e2ab33d52_3.png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "4 / 5",
+      "order": 16,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781425686188",
+      "categoryId": "commercial",
+      "title": "甜品品牌视觉",
+      "subtitle": "3×3Campaign Board",
+      "description": "产品为单人份高端冷藏慕斯甜品杯 / 奶油布丁杯 / 果酱夹心甜品杯，外观为透明圆角甜品杯或低矮圆角盒装甜品，可以看到奶油层、果酱层、慕斯层或饼干碎层。",
+      "coverImage": "assets/images/商业空间与品牌视觉/3×3 新消费甜品品牌视觉 Campaign Board (3).png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "九张图中产品包装保持一致，始终作为主角。不要使用白色易拉罐，不要使用圆形玫紫标签，不要复制参考图的具体场景、色块位置和视觉结果。",
+      "processNotes": "设计理念",
+      "caseSections": [
+        {
+          "id": "section-1781426420348",
+          "type": "gallery",
+          "title": "同系列",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "assets/images/商业空间与品牌视觉",
+          "images": [
+            "assets/images/商业空间与品牌视觉/3×3 新消费甜品品牌视觉 Campaign Board (2).png",
+            "assets/images/商业空间与品牌视觉/ChatGPT Image 2026年6月14日 16_41_25.png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "auto",
+      "order": 17,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781426644452",
+      "categoryId": "创意发散",
+      "title": "小红书打卡",
+      "subtitle": "社媒打卡",
+      "description": "日常打卡：一张原创的看展手记物件创意摄影图。局部遮挡、符号替代、错位幽默、近景裁切、低成本手工感。\n画面主体是一组看展相关物件中的一个主物件，例如展览门票、展册、相机、帆布袋、明信片、纪念品或咖啡杯。",
+      "coverImage": "assets/images/社媒打卡/看展手记 (2).jpeg",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "通过标签、贴纸、手绘线条、纸片、对话框或简笔符号，对主物件局部进行遮挡和替代，使它产生拟人化、调皮、轻荒诞的“假表情”。整体采用近景摄影，背景简单，主体突出。可用黑白或低饱和色彩，保持真实材质与手工痕迹并存。",
+      "processNotes": "气质有趣、克制、轻巧。",
+      "caseSections": [
+        {
+          "id": "section-1781426807220",
+          "type": "gallery",
+          "title": "同系列",
+          "content": "这里填写创作思路、设计理念或过程说明。",
+          "image": "assets/images/社媒打卡",
+          "images": [
+            "assets/images/社媒打卡/看展手记 (1).jpeg",
+            "assets/images/社媒打卡/ChatGPT Image 2026年6月14日 16_53_50 (2).png"
+          ],
+          "beforeImage": "",
+          "afterImage": ""
+        }
+      ],
+      "previewRatio": "auto",
+      "order": 18,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781427042852",
+      "categoryId": "commercial",
+      "title": "急速轮滑",
+      "subtitle": "轮滑鞋产品说明",
+      "description": "作品简介",
+      "coverImage": "assets/images/商业空间与品牌视觉/极速轮滑 (1).png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "auto",
+      "order": 19,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781427319435",
+      "categoryId": "创意发散",
+      "title": "看展手册",
+      "subtitle": "社媒打卡",
+      "description": "作品简介",
+      "coverImage": "assets/images/社媒打卡/看展海报.png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "auto",
+      "order": 20,
+      "isFeatured": true,
+      "isVisible": true
+    },
+    {
+      "id": "work-1781427800764",
+      "categoryId": "人像摄影",
+      "title": "人像摄影",
+      "subtitle": "作品副标题",
+      "description": "作品简介",
+      "coverImage": "assets/images/AIGC摄影专题/RX006-Le Green N°. 081 年轻女人 (2).png",
+      "images": [],
+      "tags": [
+        "AIGC"
+      ],
+      "tools": [
+        "ChatGPT"
+      ],
+      "promptLogic": "创作思路",
+      "processNotes": "设计理念",
+      "caseSections": [],
+      "previewRatio": "4 / 5",
+      "order": 21,
+      "isFeatured": true,
+      "isVisible": true
+    }
+  ]
+};

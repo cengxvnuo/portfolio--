@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>青春运动 · 迁移浏览器草稿到本地文件</title>
+  <style>
+    body { font-family: "Segoe UI", "PingFang SC", sans-serif; max-width: 720px; margin: 36px auto; padding: 0 20px; line-height: 1.6; }
+    button { padding: 10px 16px; margin: 6px 8px 6px 0; border-radius: 8px; border: 1px solid #4869a8; background: #28427a; color: #fff; cursor: pointer; }
+    pre { background: #f4f6fb; padding: 12px; border-radius: 8px; font-size: 13px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>迁移浏览器草稿 → 本地文件</h1>
+  <p>网站已改为<strong>只读取本地文件</strong>（<code>siteData.js</code> / <code>siteData.boot.js</code>），不再使用浏览器存储显示内容。</p>
+  <p>如果你以前在本机编辑过网站，浏览器里可能还留着旧草稿。请在本页做一次迁移：</p>
+  <button type="button" id="scanBtn">① 检测浏览器是否还有旧草稿</button>
+  <button type="button" id="exportBtn">② 导出并覆盖本地 siteData 文件</button>
+  <button type="button" id="clearBtn">③ 清除浏览器旧草稿</button>
+  <button type="button" id="openBtn">打开 index.html</button>
+  <pre id="log"></pre>
+  <script src="siteData.boot.js"></script>
+  <script>
+    const draftKey = "campusGravityBreakDraft";
+    const logEl = document.getElementById("log");
+    const log = (t) => { logEl.textContent += t + "\n"; };
+
+    function getBrowserDraft() {
+      const raw = localStorage.getItem(draftKey) || "";
+      if (!raw) return { raw: "", data: null, size: 0 };
+      try {
+        return { raw, data: JSON.parse(raw), size: raw.length };
+      } catch {
+        return { raw, data: null, size: raw.length };
+      }
+    }
+
+    function downloadFile(filename, body) {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([body], { type: "application/javascript;charset=utf-8" }));
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function exportData(data) {
+      downloadFile("siteData.boot.js", "window.__DISK_SITE_DATA__=" + JSON.stringify(data) + ";\n");
+      downloadFile("siteData.js", "window.siteData = " + JSON.stringify(data, null, 2) + ";\n");
+    }
+
+    document.getElementById("scanBtn").onclick = () => {
+      logEl.textContent = "";
+      const browser = getBrowserDraft();
+      const disk = window.__DISK_SITE_DATA__;
+      const diskSize = disk ? JSON.stringify(disk).length : 0;
+      log("浏览器草稿: " + (browser.size ? browser.size + " 字符" : "无"));
+      log("磁盘 siteData.boot.js: " + (diskSize ? diskSize + " 字符" : "无"));
+      if (!browser.size) {
+        log("结论: 没有旧草稿，可直接上传当前文件夹到 GitHub。");
+        return;
+      }
+      if (browser.size > diskSize + 100) {
+        log("结论: 浏览器草稿更完整，建议点②导出并覆盖项目文件。");
+      } else {
+        log("结论: 磁盘文件已是最新，建议点③清除旧草稿。");
+      }
+    };
+
+    document.getElementById("exportBtn").onclick = () => {
+      logEl.textContent = "";
+      const browser = getBrowserDraft();
+      const disk = window.__DISK_SITE_DATA__;
+      let data = browser.data;
+      if (!data || browser.size < 500) {
+        log("浏览器里没有可导出的草稿。");
+        return;
+      }
+      if (disk && JSON.stringify(disk).length > browser.size + 100) {
+        data = disk;
+        log("磁盘文件更新，已导出磁盘版本。");
+      } else {
+        log("已导出浏览器草稿。");
+      }
+      exportData(data);
+      log("请把下载的 siteData.js 和 siteData.boot.js 保存到本文件夹。");
+      log("然后运行: npm run sync");
+      log("最后把整个项目文件夹上传到 GitHub。");
+    };
+
+    document.getElementById("clearBtn").onclick = () => {
+      localStorage.removeItem(draftKey);
+      localStorage.removeItem("campusGravityBreakLang");
+      localStorage.removeItem("campusGravityBreakEditorPosition");
+      logEl.textContent = "已清除浏览器旧草稿。\n现在所有人访问网站都会读取本地 siteData 文件。";
+    };
+
+    document.getElementById("openBtn").onclick = () => { location.href = "index.html"; };
+  </script>
+</body>
+</html>

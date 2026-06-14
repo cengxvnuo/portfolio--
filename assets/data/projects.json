@@ -1,0 +1,50 @@
+[
+  {
+    "id": "afterbell",
+    "title": "青春运动品牌设计",
+    "subtitle": "校园运动服饰品牌视觉系统",
+    "category": "网页项目",
+    "description": "围绕运动、青春、校园和产品视觉构建的品牌展示网页。",
+    "coverImage": "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉 (2).png",
+    "url": "项目1：青春运动品牌设计/sports.html",
+    "tags": [
+      "品牌视觉",
+      "运动海报",
+      "产品系统"
+    ],
+    "order": 1,
+    "isVisible": true
+  },
+  {
+    "id": "maison-matin",
+    "title": "晨间公馆",
+    "subtitle": "咖啡与轻食品牌网页",
+    "category": "网页项目",
+    "description": "以街角门店、早餐菜单和生活方式氛围为核心的交互体验网页。",
+    "coverImage": "项目2：晨间公馆/assets/picture/ID19-优化立面1-橱窗、店招、营业时间牌.png",
+    "url": "项目2：晨间公馆/code.html",
+    "tags": [
+      "商业空间",
+      "餐饮品牌",
+      "场景叙事"
+    ],
+    "order": 2,
+    "isVisible": true
+  },
+  {
+    "id": "rainforest-gallery",
+    "title": "雨林展厅",
+    "subtitle": "植物数字展馆网页",
+    "category": "网页项目",
+    "description": "以植物档案、展厅导览和数字展品为核心的沉浸式全景图展示网页。",
+    "coverImage": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
+    "url": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/index.html",
+    "tags": [
+      "数字展馆",
+      "植物视觉",
+      "交互展示"
+    ],
+    "order": 3,
+    "isVisible": true
+  }
+]

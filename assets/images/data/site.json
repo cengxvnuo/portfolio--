@@ -1,0 +1,66 @@
+{
+  "brand": "AIGC 作品集",
+  "heroTitle": "AIGC Visual Portfolio",
+  "heroSubtitle": "用人工智能重构视觉设计、空间叙事与作品交付流程。",
+  "heroStatement": "结合建筑学背景的系统性思维，探索人工智能在商业空间、视觉实验、摄影专题与网页项目中的可复用方法。",
+  "heroMedia": "assets/uploads/1781343247057-hero2.mp4",
+  "identityTags": [
+    "建筑学思维",
+    "视觉工程",
+    "提示词策划",
+    "本地作品库"
+  ],
+  "navigation": [
+    {
+      "label": "首页",
+      "target": "home"
+    },
+    {
+      "label": "网页项目",
+      "target": "projects"
+    },
+    {
+      "label": "工作台",
+      "target": "workbench"
+    },
+    {
+      "label": "作品展示",
+      "target": "works"
+    },
+    {
+      "label": "作品分类",
+      "target": "categories"
+    },
+    {
+      "label": "关于",
+      "target": "about"
+    }
+  ],
+  "about": "我关注 AIGC 如何真正进入设计生产：从需求拆解、风格定位、图像控制、批量迭代，到最后的商业表达与作品集沉淀。",
+  "toolStack": [
+    "ChatGPT",
+    "Midjourney",
+    "ComfyUI",
+    "Stable Diffusion",
+    "Photoshop",
+    "本地 JSON"
+  ],
+  "contacts": [
+    {
+      "label": "邮箱",
+      "value": "hello@aigcstudio.com",
+      "url": "mailto:hello@aigcstudio.com"
+    },
+    {
+      "label": "小红书",
+      "value": "AIGC 作品集",
+      "url": "#"
+    },
+    {
+      "label": "作品集",
+      "value": "本地网页端",
+      "url": "#"
+    }
+  ],
+  "pdfUrl": "assets/AIGC-portfolio.pdf"
+}

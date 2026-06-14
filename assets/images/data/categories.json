@@ -1,0 +1,40 @@
+[
+  {
+    "id": "commercial",
+    "title": "商业空间与品牌视觉",
+    "englishTitle": "商业空间与品牌视觉",
+    "description": "面向品牌门店、餐饮空间、产品陈列和商业传播的 AIGC 视觉提案。",
+    "tags": [
+      "品牌",
+      "空间",
+      "商业"
+    ],
+    "order": 1,
+    "isVisible": true
+  },
+  {
+    "id": "lab",
+    "title": "宣传海报设计",
+    "englishTitle": "宣传海报设计",
+    "description": "",
+    "tags": [
+      "提示词",
+      "海报"
+    ],
+    "order": 2,
+    "isVisible": true
+  },
+  {
+    "id": "人像摄影",
+    "title": "AIGC 摄影专题",
+    "englishTitle": "AIGC 摄影专题",
+    "description": "以真实摄影语言探索人物、植物、空间与情绪表达。",
+    "tags": [
+      "摄影",
+      "真实感",
+      "场景"
+    ],
+    "order": 3,
+    "isVisible": true
+  }
+]

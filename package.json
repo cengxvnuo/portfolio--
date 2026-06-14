@@ -1,0 +1,14 @@
+{
+  "name": "aigc-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "homepage": ".",
+  "scripts": {
+    "bundle": "node scripts/generate-data-bundle.mjs",
+    "build": "node scripts/build.mjs",
+    "deploy": "npx gh-pages -d dist"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

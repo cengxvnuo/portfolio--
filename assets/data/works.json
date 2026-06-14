@@ -1,0 +1,299 @@
+[
+  {
+    "id": "maison-facade",
+    "categoryId": "commercial",
+    "title": "瓦楞板黑胶唱片快闪店",
+    "subtitle": "快闪店/品牌识别/商场临展",
+    "description": "围绕咖啡轻食品牌的第一眼识别，推演门店立面、橱窗陈列、营业信息和街道氛围。",
+    "coverImage": "assets/uploads/1781344822195-黑胶唱片快闪店设计.png",
+    "images": [],
+    "tags": [
+      "快闪店",
+      "品牌识别"
+    ],
+    "tools": [
+      "Gemini",
+      "Nano banana"
+    ],
+    "promptLogic": "创作一个“瓦楞纸黑胶图书馆 / Corrugated Vinyl Library”快闪空间。\n场景位于现代商场中庭或公共文化空间。主体是一组由牛皮纸色瓦楞纸板和蜂窝纸板搭建的弧形黑胶陈列墙，形成半圆形或环形浏览空间。整体空间像一个临时搭建的纸板声音档案馆，而不是普通唱片店。\n空间结构、材料与工艺、视觉氛围、人物互动、限制。",
+    "processNotes": "通过多轮生成筛选快闪店空间按层次，再用局部修正处理文字区域和商业信息层级。",
+    "caseSections": [
+      {
+        "id": "maison-facade-1",
+        "type": "text",
+        "title": "设计目标",
+        "content": "让门店在商场中被快速识别，同时保留可落地的材料、灯光和橱窗逻辑。",
+        "image": "",
+        "images": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 1,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "16 / 9"
+  },
+  {
+    "id": "maison-interior",
+    "categoryId": "commercial",
+    "title": "晨间公馆室内氛围",
+    "subtitle": "早餐空间与菜单体验",
+    "description": "从室内光线、菜单陈列、产品上桌到消费动线，构建一组完整的餐饮品牌体验视觉。",
+    "coverImage": "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+    "images": [
+      "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+      "项目2：晨间公馆/assets/picture/点餐页面.png",
+      "项目2：晨间公馆/assets/picture/上桌.png"
+    ],
+    "tags": [
+      "餐饮空间",
+      "菜单",
+      "生活方式"
+    ],
+    "tools": [
+      "ChatGPT",
+      "Midjourney",
+      "Photoshop"
+    ],
+    "promptLogic": "用清晨自然光、木质桌面、轻食产品和低饱和色彩建立品牌气质。",
+    "processNotes": "先统一室内色调，再补充菜单、上桌和过程记录，让案例具备完整叙事。",
+    "caseSections": [
+      {
+        "id": "maison-interior-1",
+        "type": "gallery",
+        "title": "空间与产品",
+        "images": [
+          "项目2：晨间公馆/assets/picture/ID09-配图2：室内 (4).png",
+          "项目2：晨间公馆/assets/picture/上桌-2.png",
+          "项目2：晨间公馆/assets/picture/点餐页面.png"
+        ],
+        "content": "",
+        "image": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 2,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "16 / 9"
+  },
+  {
+    "id": "afterbell-brand-world",
+    "categoryId": "lab",
+    "title": "青春运动品牌AFTERBELL",
+    "subtitle": "校园运动服饰的主视觉系统",
+    "description": "围绕运动社群、校园视觉和服饰产品，建立一套高能量品牌世界观。",
+    "coverImage": "cover/QCHB17 (0).png",
+    "images": [
+      "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉 (2).png",
+      "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉2 (4).png",
+      "项目1：青春运动品牌设计/assets/cases/AFTERBELL 校园运动服饰品牌的高级时尚杂志跨页海报 4：5.png"
+    ],
+    "tags": [
+      "品牌系统",
+      "运动视觉",
+      "校园"
+    ],
+    "tools": [
+      "ChatGPT",
+      "Midjourney",
+      "Photoshop"
+    ],
+    "promptLogic": "把角色、运动项目、服饰层次、校园场景和高对比动作姿态拆成可复用参数。",
+    "processNotes": "通过主视觉、产品图和跨页海报建立品牌语法，再延展到具体运动场景。",
+    "caseSections": [
+      {
+        "id": "afterbell-brand-1",
+        "type": "gallery",
+        "title": "品牌主视觉",
+        "images": [
+          "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉 (2).png",
+          "项目1：青春运动品牌设计/assets/posters/JTXL03品牌世界观主视觉2 (4).png"
+        ],
+        "content": "",
+        "image": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 3,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "4 / 5"
+  },
+  {
+    "id": "sports-poster-lab",
+    "categoryId": "lab",
+    "title": "运动海报视觉实验",
+    "subtitle": "动作、速度与冲击感",
+    "description": "围绕篮球、排球、足球、田径等运动项目，测试动作瞬间、镜头冲击和图像能量。",
+    "coverImage": "项目1：青春运动品牌设计/assets/posters/basketball-gravity-break.png",
+    "images": [
+      "项目1：青春运动品牌设计/assets/posters/basketball-gravity-break.png",
+      "项目1：青春运动品牌设计/assets/posters/volleyball-air-burst.png",
+      "项目1：青春运动品牌设计/assets/posters/soccer-impact-field.png",
+      "项目1：青春运动品牌设计/assets/posters/track-velocity-frame.png"
+    ],
+    "tags": [
+      "海报",
+      "动作",
+      "构图"
+    ],
+    "tools": [
+      "Midjourney",
+      "Photoshop"
+    ],
+    "promptLogic": "用超广角、运动模糊、决定性动作和高对比背景建立速度感。",
+    "processNotes": "多项目并行测试，用统一画面语法保持品牌一致性。",
+    "caseSections": [
+      {
+        "id": "sports-poster-1",
+        "type": "gallery",
+        "title": "运动项目组图",
+        "images": [
+          "项目1：青春运动品牌设计/assets/posters/basketball-gravity-break.png",
+          "项目1：青春运动品牌设计/assets/posters/volleyball-air-burst.png",
+          "项目1：青春运动品牌设计/assets/posters/soccer-impact-field.png",
+          "项目1：青春运动品牌设计/assets/posters/track-velocity-frame.png"
+        ],
+        "content": "",
+        "image": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 4,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "4 / 5"
+  },
+  {
+    "id": "rainforest-exhibit-photo",
+    "categoryId": "photography",
+    "title": "雨林植物展品摄影",
+    "subtitle": "植物档案与真实展陈质感",
+    "description": "以数字展馆的植物展品为对象，探索微距、展柜、标本和雨林氛围的摄影表达。",
+    "coverImage": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/03.本草图谱.png",
+    "images": [
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/01.沉睡的种子.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/02.根系网络.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/03.本草图谱.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/04.会呼吸的叶片.png"
+    ],
+    "tags": [
+      "植物",
+      "展品",
+      "摄影感"
+    ],
+    "tools": [
+      "ChatGPT",
+      "图像生成",
+      "后期调色"
+    ],
+    "promptLogic": "用展柜光、植物纹理、微距细节和档案摄影语言控制真实感。",
+    "processNotes": "统一展品背景、光源方向和信息密度，让单张图像可以组成展馆叙事。",
+    "caseSections": [
+      {
+        "id": "rainforest-photo-1",
+        "type": "gallery",
+        "title": "展品组图",
+        "images": [
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/01.沉睡的种子.png",
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/03.本草图谱.png",
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/exhibits/04.会呼吸的叶片.png"
+        ],
+        "content": "",
+        "image": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 5,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "1 / 1"
+  },
+  {
+    "id": "rainforest-space-photo",
+    "categoryId": "photography",
+    "title": "雨林展厅空间摄影",
+    "subtitle": "沉浸式植物空间与全景叙事",
+    "description": "从展厅全景、植物门厅到共生馆，建立具备空间深度的 AIGC 摄影专题。",
+    "coverImage": "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
+    "images": [
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/02-幼苗档案馆.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/03-东方草本.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
+      "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/05-展柜.png"
+    ],
+    "tags": [
+      "展厅",
+      "全景",
+      "空间摄影"
+    ],
+    "tools": [
+      "AIGC 生成",
+      "全景编辑",
+      "网页交互"
+    ],
+    "promptLogic": "用空间层次、展柜光线、植物密度和参观动线控制沉浸感。",
+    "processNotes": "以不同展厅节点组织图像，让观众从入口、展柜到主题馆逐步进入场景。",
+    "caseSections": [
+      {
+        "id": "rainforest-space-1",
+        "type": "gallery",
+        "title": "展厅节点",
+        "images": [
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/02-幼苗档案馆.png",
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/04-雨林共生馆.png",
+          "项目3：雨林展厅/plant_digital_gallery_browser_editor_v4/assets/panoramas/05-展柜.png"
+        ],
+        "content": "",
+        "image": "",
+        "beforeImage": "",
+        "afterImage": ""
+      }
+    ],
+    "order": 6,
+    "isFeatured": true,
+    "isVisible": true,
+    "previewRatio": "16 / 9"
+  },
+  {
+    "id": "work-1781345428185",
+    "categoryId": "commercial",
+    "title": "EASY眼镜x橙光几何",
+    "subtitle": "几何生光，自在出彩",
+    "description": "以几何镜框与橙色镜片为灵感，EASY 眼镜推出虚构联名企划「橙光几何」。项目以产品设计、都市光影与高级日常风格为核心，建立一套可用于社交媒体、户外广告、零售陈列与包装的视觉表达",
+    "coverImage": "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_29.png",
+    "images": [
+      "assets/images/商业空间与品牌视觉/眼镜广告"
+    ],
+    "tags": [
+      "AIGC"
+    ],
+    "tools": [
+      "ChatGPT"
+    ],
+    "promptLogic": "创作思路",
+    "processNotes": "把镜片的圆形光感与镜框的阶梯轮廓，转译成品牌级视觉语言。通过场暖橙色透镜、极简构图与时装化人物表达，形成兼具设计感、都市感与收藏感的联名叙事",
+    "caseSections": [
+      {
+        "id": "section-1781345752857",
+        "type": "gallery",
+        "title": "详情页",
+        "content": "",
+        "image": "assets/images/商业空间与品牌视觉/眼镜广告",
+        "images": [],
+        "beforeImage": "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_44.png",
+        "afterImage": "assets/images/商业空间与品牌视觉/眼镜广告/ChatGPT Image 2026年5月11日 20_25_44.png"
+      }
+    ],
+    "previewRatio": "16 / 9",
+    "order": 3,
+    "isFeatured": true,
+    "isVisible": true
+  }
+]

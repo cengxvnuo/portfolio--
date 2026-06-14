@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AIGC Visual Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#e3e3de",
+                      "secondary-fixed-dim": "#c6c7c2",
+                      "on-primary": "#690007",
+                      "tertiary": "#55dcb4",
+                      "surface-container-high": "#352625",
+                      "on-tertiary": "#00382a",
+                      "on-surface": "#f6ddda",
+                      "on-tertiary-fixed": "#002117",
+                      "inverse-primary": "#b02d29",
+                      "tertiary-container": "#00ad88",
+                      "background": "#1d100f",
+                      "outline-variant": "#59413e",
+                      "surface-container-low": "#261817",
+                      "secondary": "#c6c7c2",
+                      "on-tertiary-container": "#00382b",
+                      "on-surface-variant": "#e1bfbb",
+                      "on-background": "#f6ddda",
+                      "on-secondary-fixed-variant": "#464744",
+                      "primary-container": "#ff665c",
+                      "on-secondary-container": "#b8b9b4",
+                      "inverse-on-surface": "#3c2d2b",
+                      "surface-container": "#2a1c1b",
+                      "on-primary-container": "#690007",
+                      "secondary-container": "#484a46",
+                      "surface-bright": "#453534",
+                      "primary-fixed-dim": "#ffb4ac",
+                      "surface-tint": "#ffb4ac",
+                      "outline": "#a88a86",
+                      "surface": "#1d100f",
+                      "on-primary-fixed-variant": "#8e1215",
+                      "on-primary-fixed": "#410003",
+                      "on-error": "#690005",
+                      "surface-variant": "#41312f",
+                      "tertiary-fixed-dim": "#55dcb4",
+                      "on-secondary-fixed": "#1a1c19",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-highest": "#41312f",
+                      "error-container": "#93000a",
+                      "surface-container-lowest": "#170b0a",
+                      "inverse-surface": "#f6ddda",
+                      "tertiary-fixed": "#75f9d0",
+                      "primary": "#ffb4ac",
+                      "on-tertiary-fixed-variant": "#00513e",
+                      "on-secondary": "#2f312e",
+                      "surface-dim": "#1d100f",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "module-padding": "1.5rem",
+                      "grid-margin": "2rem",
+                      "grid-gutter": "1px",
+                      "stack-gap": "0.75rem"
+              },
+              "fontFamily": {
+                      "display-lg": ["Newsreader"],
+                      "headline-md": ["Newsreader"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Newsreader"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-sm": ["Geist"],
+                      "headline-lg-mobile": ["Newsreader"]
+              },
+              "fontSize": {
+                      "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Custom UI Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0D0F10; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF665C; }
+
+        /* Bento Grid Specifics */
+        .bento-grid {
+            display: grid;
+            gap: 1px;
+            background-color: rgba(255,255,255,0.16);
+            border: 1px solid rgba(255,255,255,0.16);
+        }
+        .bento-cell {
+            background-color: #17191B; /* Layer 1 */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Hero Text Vertical Alignment */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        
+        /* Thin Circle Graphic */
+        .thin-circle {
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 50%;
+        }
+        .thin-circle-dashed {
+            border: 1px dashed rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 0;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 0;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+        
+        /* Admin overlay styling */
+        #adminOverlay {
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+        #adminOverlay.active {
+            display: flex;
+        }
+        #adminDrawer {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #adminDrawer.open {
+            transform: translateX(0);
+        }
+    </style>
+<script>
+        function toggleAdminAuth() {
+            const overlay = document.getElementById('adminOverlay');
+            overlay.classList.toggle('active');
+        }
+        function submitAdminAuth() {
+            // Simulated auth
+            const overlay = document.getElementById('adminOverlay');
+            overlay.classList.remove('active');
+            
+            const drawer = document.getElementById('adminDrawer');
+            drawer.classList.add('open');
+        }
+        function closeAdminDrawer() {
+            const drawer = document.getElementById('adminDrawer');
+            drawer.classList.remove('open');
+        }
+    </script>
+</head>
+<body class="bg-[#0D0F10] text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-background/80 dark:bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-grid-margin py-4 w-full">
+<div class="font-display-lg text-headline-md tracking-tighter text-on-surface dark:text-on-surface">
+            AIGC Portfolio
+        </div>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-primary font-bold border-b border-primary pb-1 font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#home">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#projects">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#workbench">Workbench</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#works">Works</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#categories">Categories</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300" href="#about">About</a>
+</nav>
+<button class="bg-[#F4F4F0] text-[#111111] px-4 py-2 rounded-none font-label-sm uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-2" onclick="toggleAdminAuth()">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+            Admin
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px]"> <!-- pt to account for fixed header -->
+<!-- SECTION 01: HERO -->
+<section class="min-h-[calc(100vh-80px)] w-full px-grid-margin pb-grid-margin" id="home">
+<!-- Full Height Bento Grid Container -->
+<div class="bento-grid grid-cols-12 h-full min-h-[calc(100vh-120px)] w-full">
+<!-- Left Column: Vertical Brand -->
+<div class="bento-cell col-span-2 hidden md:flex flex-col justify-between items-center py-8">
+<div class="font-label-sm text-on-surface-variant tracking-widest uppercase">
+                        EST. 2024
+                    </div>
+<div class="vertical-text font-display-lg text-[6vw] leading-none text-on-surface opacity-20 tracking-tighter whitespace-nowrap">
+                        AIGC VISUAL PORTFOLIO
+                    </div>
+<div class="flex flex-col items-center gap-4">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Scroll</span>
+<span class="material-symbols-outlined text-primary-container animate-bounce">arrow_downward</span>
+</div>
+</div>
+<!-- Center Column: Main Hero Image & Glass Panel -->
+<div class="bento-cell col-span-12 md:col-span-7 relative flex items-center justify-center">
+<!-- Background Image for Center Panel -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-all duration-1000 hover:grayscale-0" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDZPsuyBbuiYg_2a9iEw2IRSePOSU5HNoHYsRgY4AM0SRPzdBjfW32T_uIsOv5Tmg2rQD8RLEjSuT3PWEJ7MuOG5lmEmS_zZ4FTfc4qTFWnfyRkxZgJK2hMVUqBoLuyOBMlQBYYvH4Byib__YoH7x2fU2kV6_VP8fQo3CeRz9kOzpjJkuhJ15D-U7wV9JAaO-cWz5Kgld0JefG56VxGvQIU017rjOOhjkhqfmSSrmwZaD3yTrhigXFWW216f7vzBPXVdfi0GGZ4A');"></div>
+<!-- Center Glass Circular Focus -->
+<div class="relative w-[80%] max-w-[600px] aspect-square rounded-full glass-panel flex flex-col items-center justify-center text-center p-8 z-10">
+<div class="absolute inset-4 thin-circle-dashed animate-[spin_60s_linear_infinite]"></div>
+<div class="relative z-20 flex flex-col gap-6 items-center">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter leading-tight text-white">
+                                AIGC Visual<br/>Portfolio
+                            </h1>
+<p class="font-body-lg text-on-surface-variant max-w-sm">
+                                AI-assisted visual design, spatial storytelling, workflow systems.
+                            </p>
+<div class="w-12 h-[1px] bg-white/20"></div>
+<p class="font-body-md text-on-surface-variant text-sm max-w-xs">
+                                结合建筑学背景的系统性思维，探索人工智能在视觉表达与空间叙事中的前沿应用。
+                            </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-primary-container text-white px-6 py-3 font-label-sm uppercase tracking-widest hover:bg-[#ff7b73] transition-colors flex items-center gap-2">
+                                    进入作品
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="border border-white/20 text-white px-6 py-3 font-label-sm uppercase tracking-widest hover:bg-white/5 transition-colors">
+                                    查看工作台
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Metadata & Tools -->
+<div class="bento-cell col-span-12 md:col-span-3 flex flex-col border-l border-white/10">
+<!-- Top Sub-cell: Identity -->
+<div class="flex-1 p-module-padding border-b border-white/10 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Identity</span>
+<span class="material-symbols-outlined text-primary-container">fingerprint</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-8">
+<span class="px-3 py-1 bg-white/5 font-label-sm text-on-surface text-[10px] uppercase tracking-wider">Architectural Thinker</span>
+<span class="px-3 py-1 bg-white/5 font-label-sm text-on-surface text-[10px] uppercase tracking-wider">Visual Engineer</span>
+<span class="px-3 py-1 bg-white/5 font-label-sm text-on-surface text-[10px] uppercase tracking-wider">Prompt Crafter</span>
+</div>
+</div>
+<!-- Middle Sub-cell: Tool Stack -->
+<div class="flex-1 p-module-padding border-b border-white/10 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 thin-circle opacity-20"></div>
+<div class="absolute -right-4 -bottom-4 w-20 h-20 thin-circle opacity-40"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Stack</span>
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+</div>
+<ul class="mt-8 space-y-3 relative z-10">
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+<span class="font-label-sm text-on-surface uppercase tracking-wider">Midjourney v6</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
+<span class="font-label-sm text-on-surface uppercase tracking-wider">ComfyUI Workflows</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
+<span class="font-label-sm text-on-surface uppercase tracking-wider">GPT-4 / Claude Opus</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
+<span class="font-label-sm text-on-surface uppercase tracking-wider">Stable Diffusion XL</span>
+</li>
+</ul>
+</div>
+<!-- Bottom Sub-cell: Focus Areas -->
+<div class="flex-1 p-module-padding flex flex-col justify-between bg-[#F4F4F0] text-[#111111]">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-[#111111]/50 uppercase tracking-widest">Focus</span>
+<span class="material-symbols-outlined text-[#111111]">center_focus_strong</span>
+</div>
+<div class="mt-8">
+<div class="font-headline-md font-display-lg leading-tight">Spatial<br/>Narratives.</div>
+<div class="w-full h-[1px] bg-[#111111]/10 my-4"></div>
+<div class="font-headline-md font-display-lg leading-tight">Generative<br/>Systems.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 02: WEB PROJECTS -->
+<section class="min-h-screen w-full px-grid-margin py-grid-margin border-t border-white/10" id="projects">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter text-white leading-none">Featured Projects</h2>
+<p class="font-label-sm text-primary-container uppercase tracking-widest mt-4">Selected Case Studies</p>
+</div>
+<button class="hidden md:flex bg-transparent border border-white/20 text-white px-6 py-3 font-label-sm uppercase tracking-widest hover:bg-white/5 transition-colors items-center gap-2">
+                View All Projects
+                <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</button>
+</div>
+<div class="bento-grid grid-cols-1 md:grid-cols-3 min-h-[70vh]">
+<!-- Project 1: Maison Matin -->
+<div class="bento-cell group cursor-pointer border border-white/10 flex flex-col">
+<div class="h-64 md:h-1/2 w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR3Y6ZDfwYoWfL6O3jDRU4hO-Tf7ZpbpHZvUy0q3WxkdJirEU4mLia-owz13TAajYk8cuhLqM5RooABQ4DbX4w6t5XjLN8D-TR5RN9RskoqaqzP4Olb0yfJqiNUCCkE557a7PtBEZabInlvwy5JcKLdSKE5Tgo10KLO8SH_5bq6WYr_hPsuhH8J3P797104Gp8UBBNSczNcpb9SK7mKeJ8l-zYCqmcwLpmObiLyZwh5j5XUr8XDnHBufXmbBgh-peat963gk5nsw');"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">Architecture</span>
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">AIGC</span>
+</div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-1 bg-[#17191B]">
+<div>
+<h3 class="font-headline-md text-white mb-2 group-hover:text-primary-container transition-colors">Maison Matin 晨间公馆</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-3">A conceptual architectural visualization project exploring morning light interactions within brutalist concrete structures using Midjourney v6 and Stable Diffusion upscaling.</p>
+</div>
+<div class="mt-8 flex justify-between items-center border-t border-white/10 pt-4">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">2024.01</span>
+<span class="material-symbols-outlined text-white group-hover:text-primary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 2: AFTERBELL -->
+<div class="bento-cell group cursor-pointer border border-white/10 flex flex-col">
+<div class="h-64 md:h-1/2 w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQXtrDqY3LjRpSpTaUG7SExDfRNV5T5nJe4r-vrrGzTcZj6K2QCUEjtIK0q-70NpX78rweJnMAEMkeacpe1gbu7l0vQAY18USsXCb1lWqqjiX7Z-dGqma_J2i6lWJkrm4wjLEOhrn87ZGg8jDkAFpDt2UKzNgHqslZn8HEr_AINbgxs-lRcUaR_KM_YeLz9tHUL5Qn0P6Id_tl-GFieO-dW_2lfc7DlgXkCyoo1xF3wtG4RpwgtUh3ldIuFCMJ-qrgMOOsmtFdmA');"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">Brand Identity</span>
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">Fashion</span>
+</div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-1 bg-[#17191B]">
+<div>
+<h3 class="font-headline-md text-white mb-2 group-hover:text-primary-container transition-colors">AFTERBELL 校园运动品牌</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-3">Comprehensive visual identity and virtual lookbook generation for a fictional varsity sports brand, utilizing custom trained LoRAs for consistent apparel rendering.</p>
+</div>
+<div class="mt-8 flex justify-between items-center border-t border-white/10 pt-4">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">2023.11</span>
+<span class="material-symbols-outlined text-white group-hover:text-primary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 3: AIGC Visual Lab -->
+<div class="bento-cell group cursor-pointer border border-white/10 flex flex-col">
+<div class="h-64 md:h-1/2 w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMIeVheROevtgQo-qr57xOmeZJwXFZglaXWx8gcTFi206zKyAH6sadPviwMNYBtGpl6r3Nh3oP3InsmqgviXpR9GN6jCYggyB-F7IJrPwgp0LIUyQe5c6AsKbu3MavjIAPGivoMUo8U-PkDYE8fonoNX9xy1E_eO_ARJSsEoJ4Cu6ULEmIqyktHlTP1-0ZHq2CMd7tBcONmGmlXUEtLhiodRB2nBn77sCLus8buprE_ipaF7ZYdZ38RCvs07WjU0K3fZidLvl89w');"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">Experimental</span>
+<span class="px-3 py-1 bg-black/60 backdrop-blur-md font-label-sm text-white text-[10px] uppercase tracking-wider border border-white/10">ComfyUI</span>
+</div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-1 bg-[#17191B]">
+<div>
+<h3 class="font-headline-md text-white mb-2 group-hover:text-primary-container transition-colors">AIGC Visual Lab</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-3">An ongoing collection of workflow experiments, custom node setups, and generative visual studies pushing the boundaries of current AI toolchains.</p>
+</div>
+<div class="mt-8 flex justify-between items-center border-t border-white/10 pt-4">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">ONGOING</span>
+<span class="material-symbols-outlined text-white group-hover:text-primary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 03: METHOD WORKBENCH -->
+<section class="min-h-screen w-full px-grid-margin py-grid-margin border-t border-white/10 bg-[#0A0B0C] relative overflow-hidden" id="workbench">
+<!-- Decorative background grid -->
+<div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 50px 50px;"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter text-white leading-none">Method Workbench</h2>
+<p class="font-label-sm text-primary-container uppercase tracking-widest mt-4">Systematic Generative Process</p>
+</div>
+</div>
+<!-- Dashboard Visual Container -->
+<div class="w-full bg-[#17191B] border border-white/10 rounded-lg p-8 relative">
+<div class="absolute top-4 right-4 flex gap-2">
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+</div>
+<div class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-12 border-b border-white/10 pb-4 inline-block">Workflow Pipeline v2.4</div>
+<!-- Horizontal Process Flow -->
+<div class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between items-start md:items-stretch relative">
+<!-- Connecting line (desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2 z-0"></div>
+<!-- Node 1 -->
+<div class="w-full md:w-1/4 glass-panel p-6 relative z-10 border-t-2 border-t-white/30 hover:border-t-primary-container transition-colors group">
+<div class="w-8 h-8 rounded-full bg-[#0D0F10] border border-white/20 flex items-center justify-center mb-6 text-white group-hover:text-primary-container font-label-sm">01</div>
+<h4 class="font-headline-md text-white mb-2">Brief &amp; Prompt</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Deconstructing requirements into architectural prompts and visual logic.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">GPT-4</span>
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">Notion</span>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="w-full md:w-1/4 glass-panel p-6 relative z-10 border-t-2 border-t-white/30 hover:border-t-primary-container transition-colors group">
+<div class="w-8 h-8 rounded-full bg-[#0D0F10] border border-white/20 flex items-center justify-center mb-6 text-white group-hover:text-primary-container font-label-sm">02</div>
+<h4 class="font-headline-md text-white mb-2">Base Generation</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Exploring compositional variations and lighting setups through rapid iteration.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">Midjourney v6</span>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="w-full md:w-1/4 glass-panel p-6 relative z-10 border-t-2 border-t-white/30 hover:border-t-primary-container transition-colors group">
+<div class="w-8 h-8 rounded-full bg-[#0D0F10] border border-white/20 flex items-center justify-center mb-6 text-white group-hover:text-primary-container font-label-sm">03</div>
+<h4 class="font-headline-md text-white mb-2">Control &amp; Refine</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Applying structural control (ControlNet) and detail enhancement.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">ComfyUI</span>
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">SDXL</span>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="w-full md:w-1/4 glass-panel p-6 relative z-10 border-t-2 border-t-white/30 hover:border-t-primary-container transition-colors group">
+<div class="w-8 h-8 rounded-full bg-[#0D0F10] border border-white/20 flex items-center justify-center mb-6 text-white group-hover:text-primary-container font-label-sm">04</div>
+<h4 class="font-headline-md text-white mb-2">Delivery</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Final color grading, upscaling, and presentation formatting.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">Magnific AI</span>
+<span class="px-2 py-1 bg-white/5 font-label-sm text-on-surface text-[9px] uppercase tracking-wider rounded">Photoshop</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 04 & 05: SELECTED WORKS & CATEGORIES -->
+<section class="min-h-screen w-full border-t border-white/10" id="works">
+<div class="px-grid-margin py-grid-margin">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter text-white leading-none mb-4">Selected Works</h2>
+<!-- Categories Navigation -->
+<div class="flex flex-wrap gap-6 mb-12 border-b border-white/10 pb-4" id="categories">
+<button class="font-label-sm uppercase tracking-widest text-primary-container pb-4 border-b-2 border-primary-container -mb-[18px]">All Works</button>
+<button class="font-label-sm uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors pb-4 border-b-2 border-transparent hover:border-white/30 -mb-[18px]">探境 / Commercial Scapes</button>
+<button class="font-label-sm uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors pb-4 border-b-2 border-transparent hover:border-white/30 -mb-[18px]">实验室 / Visual Lab</button>
+<button class="font-label-sm uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors pb-4 border-b-2 border-transparent hover:border-white/30 -mb-[18px]">AIGC 摄影专题</button>
+</div>
+</div>
+<!-- Seamless Masonry Grid -->
+<div class="masonry-grid w-full bg-[#0D0F10]">
+<!-- Item 1 -->
+<div class="masonry-item group relative overflow-hidden aspect-[3/4]">
+<img alt="Commercial Scape" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHst3v5H8k17-ijq1PFUd34UlJEh_ncDaWNKvDIO7nJ571NmvHdHiegTjc0-0wJCe1vGmYZlY2sWDJnzPSHkcxvH8tyZi72Zvf9XE1mvzCH8SPCJ4adqrz32p4-y039hthk5wCsBDsmew7wDjCcFqbUi7VJKM6mjso-3YHOVBOjlgRwjKx8IzP2wyTox5mi6BrNjvMme-RjbMAUkwKB13GKGcTyl1sB3pjFVG52oA-aJ-d4_vnHXboFOj_BHD14S1Fr79g6sKKg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">Commercial Scapes</span>
+<h3 class="font-headline-md text-white mb-6">Retail Environment Concept</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="masonry-item group relative overflow-hidden aspect-square">
+<img alt="Visual Lab" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUT3FdajoJSv8CXwPktkmW0_A-al8ubeR9tpXSCovNXupNjXlqtUCOsn6EBxMvYVvyPhyDQu2qYvcUAEg0wcA4T1FdyRQ1AMOXMF4n0U27_nBd2gxw5IyAdcwG7lWHKo2mjUQZW_hNVojJB7zHJ7DQozaS0p4jBxGA53Pp3-atzc5de06_FvxG18KcV2LXJyGQsKFSt0l2PKUJqGk7ddH_CdRcF3fjvKIXLf7Tf0C-8crRxUTGkJMZ5TyCJJva8PalVFcsoprg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">Visual Lab</span>
+<h3 class="font-headline-md text-white mb-6">Material Study 01</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="masonry-item group relative overflow-hidden aspect-[4/5]">
+<img alt="AIGC Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoj0HggRyTH5E339Bx08cB5mRIvpXURvlhKy9YrXTK76MoUtte8kj1OMuOxPtEaHRlOGidKgzPBArZpKlWuLZHK1qaEB_lb4WXr2mIMkGXgOF7s9PmGuTCM1Df8WnAai7QlD_FbUMH-dmiH6OMx5yi34VMaP-ersatJ5LgDdDAU5zSEY_5eZv8zL-VQrukW9x2oQD91edow0EgcWsDbUguBZDnOFWmXAFH1TbOoqpAuQBxyvInHIzV7hRgg5xbo7HN9JqFMakypA"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">AIGC 摄影专题</span>
+<h3 class="font-headline-md text-white mb-6">Cinematic Portraiture</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="masonry-item group relative overflow-hidden aspect-video">
+<img alt="Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7nGPS-rdAub-4gJWEhm0VeYRE3i8fZfSEHsTqbgKx0-oLsDMK2J7Hu6o3b4LcmVwKdV0tJcrMEFw1PFJ_sUtxtBzaMHf6B6ggJ4mSc87l6RXIrdGT2z2s4mxNJxutNrQWc-1Otx7zCwGbCP0w6el0_WOILNqCNr8Cu31VKQuyV6qgllyQWfUo1WkyHCnYZh0Cf4clEMiwtfq7uDvNxJfK0GrW92UZjxBTUmmimUD5St94PPPHM1q6pn0ieFoo6spJyB5AXK3NMQ"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">Commercial Scapes</span>
+<h3 class="font-headline-md text-white mb-6">Brutalist Interior</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="masonry-item group relative overflow-hidden aspect-[3/4]">
+<img alt="Abstract" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGOLo-yky5Wc46nJimNXEVXriEz_IUblgtxjthAU4k_hooxH3aTc8Qgx33zgGdkaz9Dj1jafg1deSQO1g7WGGeDecnxS3LPm5rE3PJAbcp_bcGYW7IgoNN1IFFGADD4j3W6Zy54EpsuDZzKX1Zpkyiyxd8cGERrCOdh74IKc3sGep-0wTi_5Igni_nyNWKKKIqc7SHNP9bATbuSEdfuh4HsuF6NwVga0x3cwBNYpCz1nXbAtoOC4JUKKB2Pb9pWGnmFKaX3u2yMw"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">Visual Lab</span>
+<h3 class="font-headline-md text-white mb-6">Generative Geometry</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="masonry-item group relative overflow-hidden aspect-square">
+<img alt="Fashion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX83bVpW2jdP2MFPJ6LyYkInbA6G-ekPy_7OEoI4Ere7nb5YLJmYNiE06H0CMwNLoWWeGYCv5RfjNZGNn8CUC15pKbiux8FURDC6ETKA8sZWduZmmRL3KUKfCMnC3nkmJUGvtfK33JLEtEZfsx7H9pDQ4dL97CYd9H9M90C263X0lY8vsCpvVHMJ4kMNIWCGr2PvukZ5EBrR-iwXSOW_n-bmrFFC0Hhvcpm66UwikMgO7t-AEsD1tmECPvbHzOzh8zel-q73_VLg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<span class="font-label-sm text-primary-container uppercase tracking-widest mb-2">AIGC 摄影专题</span>
+<h3 class="font-headline-md text-white mb-6">Editorial Lookbook</h3>
+<button class="border border-white/40 text-white px-6 py-2 font-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">View Case</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 06: ABOUT & CONTACT -->
+<section class="min-h-screen w-full px-grid-margin py-grid-margin border-t border-white/10 flex flex-col justify-center" id="about">
+<div class="bento-grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto w-full">
+<div class="bento-cell p-12 flex flex-col justify-center border border-white/10">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter text-white leading-none mb-8">Hello.</h2>
+<p class="font-body-lg text-on-surface-variant mb-6">
+                        I am a visual engineer and architectural thinker exploring the intersection of spatial design and artificial intelligence. My work focuses on building generative systems that produce compelling visual narratives.
+                    </p>
+<p class="font-body-lg text-on-surface-variant mb-12">
+                        Currently focused on ComfyUI workflow development, custom LoRA training, and conceptual spatial visualizations.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-white px-6 py-3 font-label-sm uppercase tracking-widest hover:bg-[#ff7b73] transition-colors">
+                            Get in Touch
+                        </button>
+<button class="border border-white/20 text-white px-6 py-3 font-label-sm uppercase tracking-widest hover:bg-white/5 transition-colors">
+                            Download CV
+                        </button>
+</div>
+</div>
+<div class="bento-cell p-12 bg-[#17191B] border border-white/10 flex flex-col justify-center">
+<h3 class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Connect</h3>
+<div class="flex flex-col gap-6">
+<a class="font-headline-md text-white hover:text-primary-container transition-colors flex justify-between items-center group" href="#">
+<span>hello@aigcstudio.com</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="font-headline-md text-white hover:text-primary-container transition-colors flex justify-between items-center group" href="#">
+<span>Twitter / X</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="font-headline-md text-white hover:text-primary-container transition-colors flex justify-between items-center group" href="#">
+<span>Instagram</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="font-headline-md text-white hover:text-primary-container transition-colors flex justify-between items-center group" href="#">
+<span>Behance</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Predicted Component - Hidden on mobile, fixed on right) -->
+<nav class="hidden md:flex flex-col gap-4 items-center fixed right-8 top-1/2 -translate-y-1/2 z-40 bg-transparent">
+<a class="text-primary scale-150 transition-all duration-500 ease-in-out hover:text-primary/60" href="#home" title="Intro">
+<span class="material-symbols-outlined font-label-sm text-label-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</a>
+<a class="text-on-surface/30 scale-100 transition-all duration-500 ease-in-out hover:text-primary/60" href="#projects" title="Showcase">
+<span class="material-symbols-outlined font-label-sm text-label-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</a>
+<a class="text-on-surface/30 scale-100 transition-all duration-500 ease-in-out hover:text-primary/60" href="#workbench" title="Tools">
+<span class="material-symbols-outlined font-label-sm text-label-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</a>
+<a class="text-on-surface/30 scale-100 transition-all duration-500 ease-in-out hover:text-primary/60" href="#works" title="Process">
+<span class="material-symbols-outlined font-label-sm text-label-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</a>
+<a class="text-on-surface/30 scale-100 transition-all duration-500 ease-in-out hover:text-primary/60" href="#about" title="Connect">
+<span class="material-symbols-outlined font-label-sm text-label-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-8 mt-auto border-t border-white/5 bg-background dark:bg-background flex flex-col md:flex-row justify-between items-center px-grid-margin gap-4 opacity-80 hover:opacity-100">
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+            © 2024 AIGC Studio. All Rights Reserved.
+        </div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Twitter</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Behance</a>
+</div>
+</footer>
+<!-- Admin Auth Overlay -->
+<div class="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center" id="adminOverlay">
+<div class="bg-[#17191B] border border-white/20 p-8 w-full max-w-sm flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-white">Admin Access</h3>
+<button class="text-white/50 hover:text-white" onclick="toggleAdminAuth()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">Please enter your master password to access the editing suite.</p>
+<input class="bg-[#0D0F10] border border-white/20 text-white px-4 py-2 font-label-sm tracking-widest focus:outline-none focus:border-primary-container" placeholder="PASSWORD" type="password"/>
+<button class="bg-[#F4F4F0] text-[#111111] px-4 py-3 font-label-sm uppercase tracking-widest hover:bg-white transition-colors text-center w-full" onclick="submitAdminAuth()">
+                Authenticate
+            </button>
+</div>
+</div>
+<!-- Admin Side Drawer -->
+<div class="fixed top-0 right-0 h-full w-80 bg-[#17191B] border-l border-white/20 z-[70] p-6 flex flex-col gap-8 shadow-2xl" id="adminDrawer">
+<div class="flex justify-between items-center border-b border-white/10 pb-4">
+<h3 class="font-label-sm text-primary-container uppercase tracking-widest">Editing Suite</h3>
+<button class="text-white/50 hover:text-white" onclick="closeAdminDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 flex-grow">
+<button class="flex items-center gap-3 text-white/70 hover:text-white p-2 hover:bg-white/5 transition-colors text-left border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+<span class="font-label-sm uppercase tracking-wider">Add New Work</span>
+</button>
+<button class="flex items-center gap-3 text-white/70 hover:text-white p-2 hover:bg-white/5 transition-colors text-left border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined">edit_document</span>
+<span class="font-label-sm uppercase tracking-wider">Edit Content</span>
+</button>
+<button class="flex items-center gap-3 text-white/70 hover:text-white p-2 hover:bg-white/5 transition-colors text-left border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm uppercase tracking-wider">Manage Categories</span>
+</button>
+<button class="flex items-center gap-3 text-white/70 hover:text-white p-2 hover:bg-white/5 transition-colors text-left border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined">build</span>
+<span class="font-label-sm uppercase tracking-wider">Update Toolchain</span>
+</button>
+</div>
+<button class="border border-white/20 text-white/50 px-4 py-2 font-label-sm uppercase tracking-widest hover:bg-white/5 hover:text-white transition-colors text-center w-full mt-auto" onclick="closeAdminDrawer()">
+            Log Out
+        </button>
+</div>
+</body></html>

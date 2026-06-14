@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Campus Gravity Break bilingual campus sportswear brand website." />
+    <title>Campus Gravity Break</title>
+    <!-- 本地编辑：地址末尾加 ?edit=1，例如 index.html?edit=1 -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="nav">
+      <a class="brand-mark" href="#top" data-bind="hero.title">Campus Gravity Break</a>
+      <nav aria-label="Primary navigation">
+        <a href="#story" data-i18n="nav.story">品牌故事</a>
+        <a href="#products" data-i18n="nav.products">产品线</a>
+        <a href="#cases" data-i18n="nav.cases">案例库</a>
+        <a href="#prompt" data-i18n="nav.prompt">提示词</a>
+        <a href="#grammar" data-i18n="nav.grammar">视觉语法</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="video-audio-toggle" type="button" id="videoAudioToggle" hidden>静音</button>
+        <button class="lang-toggle" type="button" id="langToggle">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="motion-lines" aria-hidden="true">
+          <span style="top: 8%"></span><span style="top: 16%"></span><span style="top: 24%"></span>
+          <span style="top: 32%"></span><span style="top: 40%"></span><span style="top: 48%"></span>
+          <span style="top: 56%"></span><span style="top: 64%"></span><span style="top: 72%"></span>
+          <span style="top: 80%"></span>
+        </div>
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow" data-bind="hero.kicker">AI 校园运动海报系统</p>
+            <h1 data-bind="hero.title">Campus Gravity Break</h1>
+            <p class="cn-title" data-bind="hero.subtitle">校园重力突破 / AI 青春篮球运动海报系统</p>
+            <p class="hero-copy" data-bind="hero.copy"></p>
+            <div class="actions">
+              <a class="button primary" href="#products" data-i18n="hero.primaryCta">浏览产品线</a>
+              <a class="button" href="#prompt" data-i18n="hero.secondaryCta">生成提示词</a>
+            </div>
+          </div>
+          <div class="poster-stage" id="posterStage"></div>
+        </div>
+      </section>
+
+      <section id="story" class="section-grid"></section>
+      <section id="campaign" class="campaign-media-section"></section>
+      <section id="products"></section>
+      <section id="cases"></section>
+      <section id="router"></section>
+      <section id="prompt"></section>
+      <section id="grammar"></section>
+      <section id="workflow"></section>
+      <section id="cta"></section>
+    </main>
+
+    <aside id="editorPanel" class="editor-panel" aria-label="Local editor"></aside>
+
+    <script src="./siteData.boot.js"></script>
+    <script src="./siteData.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

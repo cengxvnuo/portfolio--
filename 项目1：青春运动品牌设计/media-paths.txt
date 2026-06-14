@@ -1,0 +1,193 @@
+# Campus Gravity Break — 媒体路径清单
+# 生成时间: 2026-06-07T07:26:06.786Z
+# 修改配图: 1) 把文件放进 assets/  2) 改 siteData.js 对应路径  3) npm run save-local
+siteData.hero.poster.image
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.hero.poster.poster
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.hero.mainMediaSrc
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.hero.mainMediaPoster
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.hero.objects[0].image
+  ./assets/objects/basketball.png
+
+siteData.hero.objects[1].image
+  ./assets/objects/whistle.png
+
+siteData.hero.objects[2].image
+  ./assets/objects/water-bottle.png
+
+siteData.hero.objects[3].image
+  ./assets/objects/high-top-shoe.png
+
+siteData.hero.objects[4].image
+  ./assets/objects/wristbands.png
+
+siteData.hero.objects[5].image
+  ./assets/objects/tactical-board.png
+
+siteData.hero.objects[6].image
+  ./assets/objects/net-fragment.png
+
+siteData.brandStory.image
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.brandStory.poster
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.campaignMedia.image
+  ./assets/cases/ST02视频故事板（第二版）3.png
+
+siteData.campaignMedia.video
+  ./assets/videos/VI05宣传视频.mp4
+
+siteData.campaignMedia.poster
+  ./assets/cases/ST02视频故事板（第二版）3.png
+
+siteData.campaignMedia.promoVideo.image
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.campaignMedia.promoVideo.video
+  ./assets/videos/VI06轮滑运动宣传视频.mp4
+
+siteData.campaignMedia.promoVideo.poster
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.products[0].image
+  ./assets/products/QCHB16 (4).png
+
+siteData.products[0].poster
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.products[1].image
+  ./assets/products/JTXL01-1街头训练轻装（产品）2 (3).png
+
+siteData.products[1].poster
+  ./assets/posters/JTXL02校队热身层叠装拉伸海报 (4).png
+
+siteData.products[2].image
+  ./assets/products/QCHB17 (3)4：5.png
+
+siteData.products[2].poster
+  ./assets/posters/JTXL03品牌世界观主视觉 (2).png
+
+siteData.cases[0].image
+  ./assets/posters/YH04篮球油画海报 (2).png
+
+siteData.cases[0].cover
+  ./assets/posters/YH04篮球油画海报 (2).png
+
+siteData.cases[0].video
+  ./assets/videos/篮球海报视频2.mp4
+
+siteData.cases[0].poster
+  ./assets/posters/YH04篮球油画海报 (2).png
+
+siteData.cases[1].image
+  ./assets/posters/QCHB20 (4).png
+
+siteData.cases[1].cover
+  ./assets/posters/QCHB20 (4).png
+
+siteData.cases[1].video
+  ./assets/videos/VI04宣传视频-seedance-5s.mp4
+
+siteData.cases[1].poster
+  ./assets/posters/QCHB20 (4).png
+
+siteData.cases[2].image
+  ./assets/posters/volleyball-air-burst.png
+
+siteData.cases[2].cover
+  ./assets/posters/volleyball-air-burst.png
+
+siteData.cases[2].poster
+  ./assets/posters/volleyball-air-burst.png
+
+siteData.cases[3].image
+  ./assets/posters/YH03田径运动油画海报 (2).png
+
+siteData.cases[3].cover
+  ./assets/posters/YH03田径运动油画海报 (2).png
+
+siteData.cases[3].poster
+  ./assets/posters/YH03田径运动油画海报 (2).png
+
+siteData.cases[4].image
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.cases[4].cover
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.cases[4].poster
+  ./assets/cases/ST03人物形象+产品,新海报 (2).png
+
+siteData.cases[5].image
+  ./assets/cases/ST02视频故事板（第二版）3.png
+
+siteData.cases[5].cover
+  ./assets/cases/ST02视频故事板（第二版）3.png
+
+siteData.cases[5].video
+  ./assets/videos/VI04宣传视频-seedance-5s.mp4
+
+siteData.cases[5].poster
+  ./assets/cases/ST02视频故事板（第二版）3.png
+
+siteData.cases[6].image
+  ./assets/cases/JTXL04篮球裙裤  训练裙裤 (2).png
+
+siteData.cases[6].cover
+  ./assets/cases/JTXL04篮球裙裤  训练裙裤 (2).png
+
+siteData.cases[6].poster
+  ./assets/cases/JTXL04篮球裙裤  训练裙裤 (2).png
+
+siteData.cases[7].image
+  ./assets/cases/AFTERBELL 校园运动服饰品牌的高级时尚杂志跨页海报 4：5.png
+
+siteData.cases[7].cover
+  ./assets/cases/AFTERBELL 校园运动服饰品牌的高级时尚杂志跨页海报 4：5.png
+
+siteData.cases[7].poster
+  ./assets/cases/AFTERBELL 校园运动服饰品牌的高级时尚杂志跨页海报 4：5.png
+
+siteData.grammarCards[0].image
+  ./assets/grammar/lens-impact.png
+
+siteData.grammarCards[1].image
+  ./assets/grammar/character-anchor.png
+
+siteData.grammarCards[2].image
+  ./assets/products/QCHB16 (4).png
+
+siteData.grammarCards[3].image
+  ./assets/grammar/decisive-action.png
+
+siteData.grammarCards[4].image
+  ./assets/grammar/props.png
+
+siteData.grammarCards[5].image
+  ./assets/posters/JTXL03品牌世界观主视觉2 (4).png
+
+siteData.grammarCards[6].image
+  ./assets/grammar/expression.png
+
+siteData.grammarCards[7].image
+  ./assets/grammar/motion-blur.png
+
+siteData.grammarCards[8].image
+  ./assets/grammar/lighting.png
+
+siteData.grammarCards[9].image
+  ./assets/grammar/background-layers.png
+
+siteData.grammarCards[10].image
+  ./assets/grammar/texture.png
+
+# 全部路径有效

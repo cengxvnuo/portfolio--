@@ -1,0 +1,337 @@
+{
+  "project": {
+    "id": "plant_digital_gallery",
+    "title": "万象植境｜Botanical Immersive Archive",
+    "subtitle": "360° 植物数字展厅编辑器｜可视化修改版",
+    "version": "0.2.0",
+    "style": "高级植物博物馆 × 东方自然美学 × 现代展陈设计",
+    "note": "全景图只负责空间氛围和空展位；准确展品通过热点、弹窗、展品图、HTML 文字和语音实现。"
+  },
+  "settings": {
+    "startRoomId": "room_01_plant_gate",
+    "autoLoadPanorama": true,
+    "defaultSceneFadeDuration": 800,
+    "uiLanguage": "zh-CN",
+    "showHotspotLabels": true,
+    "musicEnabled": false,
+    "tourModeEnabled": false,
+    "mediaBaseUrl": "assets/"
+  },
+  "rooms": [
+    {
+      "id": "room_01_plant_gate",
+      "name": "植物之门",
+      "shortName": "序厅",
+      "theme": "项目序厅 / 世界观入口",
+      "panoramaUrl": "panoramas/room_01_plant_gate.png",
+      "panoramaAlt": "请填入或上传 Room 01 序厅空展位版 360° 全景图",
+      "bgmUrl": "",
+      "initialView": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 105
+      },
+      "hotspots": [
+        {
+          "id": "P001_life_ring",
+          "title": "根系网络",
+          "subtitle": "Root network",
+          "type": "concept_installation",
+          "yaw": 3.9,
+          "pitch": -20.3,
+          "imageUrl": "exhibits/P001_life_ring.png",
+          "audioUrl": "",
+          "tags": [
+            "概念装置",
+            "生命循环",
+            "序厅"
+          ],
+          "description": "根系与菌丝共同构成地下交流网络，植物通过环境反馈、资源交换与协作关系参与更大的生态系统。",
+          "guideText": "这里是植物之门的核心装置。生命之环并不代表某一种具体植物，而是整个展厅的精神锚点。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "地下的信息网络"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "P002_digital_archive_wall",
+          "title": "会呼吸的叶片",
+          "subtitle": "Breathing leaves",
+          "type": "digital_archive",
+          "yaw": 65.3,
+          "pitch": -29.1,
+          "imageUrl": "exhibits/P002_digital_archive_wall.png",
+          "audioUrl": "",
+          "tags": [
+            "感知",
+            "适应",
+            "光",
+            "水"
+          ],
+          "description": "植物会响应光、水分、重力、触碰和温度。它们的智慧并不表现为移动，而是表现为极其精细的适应策略。",
+          "guideText": "植物会响应光、水分、重力、触碰和温度。它们的智慧并不表现为移动，而是表现为极其精细的适应策略。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "植物如何感知环境"
+            },
+            {
+              "label": "互动方式",
+              "value": "点击热点打开信息页；可在右侧编辑标题、图片、讲解词、标签和自定义信息块。"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "P003_new_hotspot",
+          "title": "本草图谱",
+          "subtitle": "This sketch map",
+          "type": "exhibit",
+          "yaw": 133,
+          "pitch": -35.5,
+          "imageUrl": "exhibits/P003_new_hotspot.png",
+          "audioUrl": "",
+          "tags": [
+            "典籍"
+          ],
+          "description": "图谱典籍珍藏",
+          "guideText": "这里填写语音讲解词。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "历代典籍"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "P004_new_hotspot",
+          "title": "沉睡的种子",
+          "subtitle": "The dormant seed",
+          "type": "exhibit",
+          "yaw": -128.1,
+          "pitch": -26.3,
+          "imageUrl": "exhibits/P004_new_hotspot.png",
+          "audioUrl": "",
+          "tags": [
+            "新生"
+          ],
+          "description": "种子是正在苏醒的生命核心",
+          "guideText": "这里填写语音讲解词。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "剖面图展示种子在地面以下的生长状态"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "P005_new_hotspot",
+          "title": "城市中的野草",
+          "subtitle": "Weeds in the city",
+          "type": "exhibit",
+          "yaw": -53.8,
+          "pitch": -18.9,
+          "imageUrl": "exhibits/P005_new_hotspot.png",
+          "audioUrl": "",
+          "tags": [
+            "生命力",
+            "城市"
+          ],
+          "description": "顽强的生命力",
+          "guideText": "这里填写语音讲解词。",
+          "infoBlocks": [],
+          "targetRoomId": ""
+        },
+        {
+          "id": "nav_06_next_room",
+          "title": "下一展厅",
+          "subtitle": "点击进入",
+          "type": "room_link",
+          "targetRoomId": "",
+          "yaw": 31,
+          "pitch": -9.4,
+          "imageUrl": "",
+          "audioUrl": "",
+          "tags": [],
+          "description": "",
+          "guideText": "",
+          "infoBlocks": []
+        }
+      ]
+    },
+    {
+      "id": "room_03_oriental_herbarium",
+      "name": "东方本草馆",
+      "shortName": "本草",
+      "theme": "东方植物文化与本草美学",
+      "panoramaUrl": "panoramas/room_03_oriental_herbarium.png",
+      "panoramaAlt": "请填入或上传 Room 03 东方本草馆空展位版 360° 全景图",
+      "bgmUrl": "",
+      "initialView": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 105
+      },
+      "hotspots": [
+        {
+          "id": "P003_sleeping_seed",
+          "title": "本草源流",
+          "subtitle": "Origin and Development of Herbal Medicine",
+          "type": "seed_specimen",
+          "yaw": 35.3,
+          "pitch": -4.5,
+          "imageUrl": "exhibits/P003_sleeping_seed.png",
+          "audioUrl": "",
+          "tags": [
+            "植物",
+            "标本",
+            "典籍"
+          ],
+          "description": "从本草文化出发，展示植物如何进入古代知识体系、医疗经验与日常生活。这里不是传统文献陈列，而是将本草转译成兼具东方文脉与当代展示感的数字空间。",
+          "guideText": "从本草文化出发，展示植物如何进入古代知识体系、医疗经验与日常生活。这里不是传统文献陈列，而是将本草转译成兼具东方文脉与当代展示感的数字空间。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "典籍收藏与草本植物"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "nav_03_next_room",
+          "title": "下一展厅",
+          "subtitle": "点击进入",
+          "type": "room_link",
+          "targetRoomId": "",
+          "yaw": -13.3,
+          "pitch": -6.9,
+          "imageUrl": "",
+          "audioUrl": "",
+          "tags": [],
+          "description": "",
+          "guideText": "",
+          "infoBlocks": []
+        }
+      ]
+    },
+    {
+      "id": "room_04_rainforest_network",
+      "name": "雨林共生馆",
+      "shortName": "雨林",
+      "theme": "植物与生态网络",
+      "panoramaUrl": "panoramas/room_04_rainforest_network.png",
+      "panoramaAlt": "请填入或上传 Room 04 雨林共生馆空展位版 360° 全景图",
+      "bgmUrl": "",
+      "initialView": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 105
+      },
+      "hotspots": [
+        {
+          "id": "P009_climate_adaptive_plant",
+          "title": "雨林记忆",
+          "subtitle": "Rainforest Memories",
+          "type": "future_botanical_specimen",
+          "yaw": -73.9,
+          "pitch": -14.8,
+          "imageUrl": "exhibits/P009_climate_adaptive_plant.png",
+          "audioUrl": "",
+          "tags": [
+            "未来植物",
+            "气候适应"
+          ],
+          "description": "一株根据未来气候想象生成的植物样本，视觉上体现耐旱、耐热、储水或城市环境适应特征。",
+          "guideText": "当气候环境改变，植物也可能发展出新的适应策略。这个样本以植物逻辑为基础，想象未来城市中的生长方式。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "一株根据未来气候想象生成的植物样本，视觉上体现耐旱、耐热、储水或城市环境适应特征。"
+            }
+          ],
+          "targetRoomId": ""
+        },
+        {
+          "id": "P002_new_hotspot",
+          "title": "山林之间",
+          "subtitle": "Between the mountains and the forests",
+          "type": "exhibit",
+          "yaw": 25.5,
+          "pitch": -10.7,
+          "imageUrl": "exhibits/P002_new_hotspot.png",
+          "audioUrl": "",
+          "tags": [
+            "共生"
+          ],
+          "description": "山林之间：自然与人文对话",
+          "guideText": "这里填写语音讲解词。",
+          "infoBlocks": [
+            {
+              "label": "展品定位",
+              "value": "共生之境"
+            }
+          ],
+          "targetRoomId": ""
+        }
+      ]
+    }
+  ],
+  "tourSequence": [
+    {
+      "roomId": "room_01_plant_gate",
+      "hotspotId": "P001_life_ring",
+      "duration": 7
+    },
+    {
+      "roomId": "room_01_plant_gate",
+      "hotspotId": "P002_digital_archive_wall",
+      "duration": 7
+    },
+    {
+      "roomId": "room_03_oriental_herbarium",
+      "hotspotId": "P003_sleeping_seed",
+      "duration": 7
+    },
+    {
+      "roomId": "room_04_rainforest_network",
+      "hotspotId": "P009_climate_adaptive_plant",
+      "duration": 7
+    },
+    {
+      "roomId": "room_01_plant_gate",
+      "hotspotId": "P003_new_hotspot",
+      "duration": 7
+    },
+    {
+      "roomId": "room_01_plant_gate",
+      "hotspotId": "P004_new_hotspot",
+      "duration": 7
+    },
+    {
+      "roomId": "room_01_plant_gate",
+      "hotspotId": "P005_new_hotspot",
+      "duration": 7
+    },
+    {
+      "roomId": "room_04_rainforest_network",
+      "hotspotId": "P002_new_hotspot",
+      "duration": 7
+    }
+  ],
+  "ui": {
+    "brandEyebrow": "Botanical Immersive Archive",
+    "sectionRooms": "展区切换",
+    "helpTitle": "定位热点",
+    "helpSteps": [
+      "先选择或新增一个热点。",
+      "点击“开启点击定位”。",
+      "在全景图任意位置点击，即可把热点放到那里。",
+      "也可以直接填写 yaw / pitch 数值微调。"
+    ]
+  }
+}

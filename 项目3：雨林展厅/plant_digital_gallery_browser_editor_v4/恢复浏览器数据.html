@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <base href="./" />
+  <title>雨林展厅 · 恢复浏览器数据</title>
+  <style>
+    body { font-family: "Segoe UI", "PingFang SC", sans-serif; max-width: 720px; margin: 36px auto; padding: 0 20px; line-height: 1.6; }
+    button { padding: 10px 16px; margin: 6px 8px 6px 0; border-radius: 8px; border: 1px solid #4869a8; background: #28427a; color: #fff; cursor: pointer; }
+    pre { background: #f4f6fb; padding: 12px; border-radius: 8px; font-size: 13px; white-space: pre-wrap; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0; }
+    th, td { border: 1px solid #d8deea; padding: 6px 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>雨林展厅 · 恢复浏览器数据</h1>
+  <p>若之前在浏览器里编辑过展厅，可用此页检测 localStorage / IndexedDB，并导出到 <code>data/gallery.boot.js</code>。</p>
+  <button type="button" id="scanBtn">① 检测数据</button>
+  <button type="button" id="exportJsonBtn">② 下载 gallery.json</button>
+  <button type="button" id="exportBootBtn">③ 下载 gallery.boot.js</button>
+  <button type="button" id="openBtn">打开 index.html</button>
+  <pre id="log"></pre>
+  <div id="roomTable"></div>
+  <script src="data/gallery.boot.js"></script>
+  <script>
+    const STORAGE_KEYS = [
+      "plant_digital_gallery_browser_editor_v4",
+      "plant_digital_gallery_browser_editor_v3"
+    ];
+    const IDB_NAMES = [
+      "plant_digital_gallery_panorama_v1",
+      "plant_gallery_panorama_v1"
+    ];
+    const IDB_STORE = "panoramaBlobs";
+    const logEl = document.getElementById("log");
+    const tableEl = document.getElementById("roomTable");
+    const log = (t) => { logEl.textContent += t + "\n"; };
+
+    function readBrowser() {
+      for (const key of STORAGE_KEYS) {
+        const raw = localStorage.getItem(key);
+        if (!raw) continue;
+        try {
+          const data = JSON.parse(raw);
+          if (Array.isArray(data.rooms) && data.rooms.length) return { key, data, size: raw.length };
+        } catch (err) {
+          console.warn(key, err);
+        }
+      }
+      return { key: null, data: null, size: 0 };
+    }
+
+    function score(data) {
+      let n = 0;
+      (data?.rooms || []).forEach((r) => {
+        if (r.panoramaUrl) n += 10;
+        (r.hotspots || []).forEach((h) => { if (h.imageUrl) n += 2; });
+      });
+      return n;
+    }
+
+    async function countIdbPanos(data) {
+      let n = 0;
+      for (const room of data?.rooms || []) {
+        if (room.panoramaLocalKey) n++;
+      }
+      return n;
+    }
+
+    function pickBestData() {
+      const browser = readBrowser();
+      const disk = window.__DISK_GALLERY__;
+      const candidates = [
+        { label: "浏览器", data: browser.data, size: browser.size },
+        { label: "磁盘 boot.js", data: disk, size: disk ? JSON.stringify(disk).length : 0 }
+      ].filter((c) => c.data?.rooms?.length);
+      candidates.sort((a, b) => score(b.data) - score(a.data));
+      return { best: candidates[0]?.data || disk, browserKey: browser.key };
+    }
+
+    function renderRoomTable(data) {
+      if (!data?.rooms?.length) {
+        tableEl.innerHTML = "";
+        return;
+      }
+      const rows = data.rooms.map((r) => `
+        <tr>
+          <td>${r.shortName || r.name || r.id}</td>
+          <td>${r.panoramaUrl || "(空)"}${r.panoramaLocalKey ? " + IDB" : ""}</td>
+          <td>${(r.hotspots || []).map((h) => h.title).join("、") || "(无热点)"}</td>
+        </tr>`).join("");
+      tableEl.innerHTML = `<table><thead><tr><th>展厅</th><th>全景路径</th><th>热点</th></tr></thead><tbody>${rows}</tbody></table>`;
+    }
+
+    document.getElementById("scanBtn").onclick = async () => {
+      logEl.textContent = "";
+      const browser = readBrowser();
+      const disk = window.__DISK_GALLERY__;
+      log("浏览器 localStorage: " + (browser.key ? `${browser.key} (${browser.size} 字符, 得分 ${score(browser.data)})` : "无"));
+      log("磁盘 gallery.boot.js: " + (disk ? `展厅 ${disk.rooms.length}, 得分 ${score(disk)}` : "无"));
+      log("IndexedDB 全景键: " + (await countIdbPanos(browser.data || disk)));
+      const { best } = pickBestData();
+      renderRoomTable(best);
+    };
+
+    function download(filename, text) {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    document.getElementById("exportJsonBtn").onclick = () => {
+      logEl.textContent = "";
+      const { best } = pickBestData();
+      if (!best) { log("没有可导出的数据"); return; }
+      download("gallery.json", JSON.stringify(best, null, 2) + "\n");
+      log("已下载 gallery.json，请覆盖到 data/gallery.json");
+      renderRoomTable(best);
+    };
+
+    document.getElementById("exportBootBtn").onclick = () => {
+      logEl.textContent = "";
+      const { best, browserKey } = pickBestData();
+      if (!best) { log("没有可导出的数据"); return; }
+      const body = "window.__DISK_GALLERY__=" + JSON.stringify(best) + ";\n";
+      download("gallery.boot.js", body);
+      if (browserKey) localStorage.setItem(browserKey, JSON.stringify(best));
+      log("已下载 gallery.boot.js → 覆盖 data/gallery.boot.js");
+      log("展厅: " + best.rooms.length + "，含全景: " + best.rooms.filter((r) => r.panoramaUrl).length);
+      renderRoomTable(best);
+    };
+
+    document.getElementById("openBtn").onclick = () => { location.href = "index.html"; };
+  </script>
+</body>
+</html>

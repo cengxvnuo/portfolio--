@@ -1,0 +1,11 @@
+node_modules/
+**/node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.crswap
+项目2：晨间公馆/assets/video/1_stab_prob4.mov
+assets/images/00_零散案例播放/建筑设计/案例底图用：住宅一套图纸/*.pdf
+assets/images/00_零散案例播放/*
+!assets/images/00_零散案例播放/插画/
+!assets/images/00_零散案例播放/插画/**

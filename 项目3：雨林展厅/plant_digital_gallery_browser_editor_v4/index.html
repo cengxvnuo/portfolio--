@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="./" />
+  <title>万象植境｜植物数字展厅编辑器</title>
+  <link rel="stylesheet" href="vendor/pannellum/build/pannellum.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260614-panorama-fix" />
+</head>
+<body>
+  <div class="app-shell editor-panel-collapsed" id="appShell">
+    <aside class="sidebar left-panel">
+      <div class="brand-block">
+        <p class="eyebrow" id="sidebarBrandEyebrow">Botanical Immersive Archive</p>
+        <h1 id="projectTitle" class="sidebar-editable">万象植境</h1>
+        <p id="projectSubtitle" class="subtitle sidebar-editable">360° 植物数字展厅编辑器</p>
+      </div>
+
+      <section class="panel-section">
+        <div class="section-title row-title">
+          <span id="sidebarSectionRoomsTitle" class="sidebar-editable">展区切换</span>
+          <button id="addRoomBtn" class="mini-btn" type="button">+ 展厅</button>
+        </div>
+        <div id="roomList" class="room-list"></div>
+      </section>
+
+      <section class="panel-section compact-help">
+        <div class="section-title sidebar-editable" id="sidebarHelpTitle">定位热点</div>
+        <ol id="sidebarHelpSteps"></ol>
+      </section>
+    </aside>
+
+    <main class="viewer-area">
+      <div class="top-toolbar">
+        <div>
+          <p class="eyebrow">Current Room</p>
+          <h2 id="currentRoomTitle">植物之门</h2>
+        </div>
+        <div class="toolbar-actions">
+          <button id="toggleEditorPanelBtn" type="button" class="ghost-btn accent-outline">展开编辑面板</button>
+          <button id="locateModeBtn" type="button" class="ghost-btn">点击定位：关</button>
+          <button id="toggleLabelsBtn" type="button" class="ghost-btn">热点标签：开</button>
+          <button id="startTourBtn" type="button" class="primary-btn">自动导览测试</button>
+        </div>
+      </div>
+
+      <div class="panorama-stage">
+        <div id="panorama" class="panorama">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-card">
+              <p class="eyebrow">Panorama Required</p>
+              <h2>请先填入或上传当前展区的 360° 全景图</h2>
+              <p>推荐 2:1 等距柱状投影图，例如 4096×2048 或 6000×3000。</p>
+            </div>
+          </div>
+        </div>
+        <button id="prevRoomArrow" class="room-arrow room-arrow-left" aria-label="上一个展厅">‹</button>
+        <button id="nextRoomArrow" class="room-arrow room-arrow-right" aria-label="下一个展厅">›</button>
+      </div>
+
+      <div class="viewer-footer">
+        <div>
+          <strong id="selectedHotspotLabel">未选择热点</strong>
+          <span id="coordsReadout">yaw 0 / pitch 0</span>
+        </div>
+        <p>全景预览区宽 65%，固定宽高比 13:8（随宽缩放，展开/收起编辑栏不变形）；自动导览按展厅顺序依次播放每个展厅内的全部热点后再切换展厅。</p>
+      </div>
+    </main>
+
+    <aside class="sidebar right-panel" id="rightEditorPanel" aria-label="编辑面板">
+      <section class="panel-section">
+        <details open>
+          <summary class="section-title">项目设置</summary>
+          <div class="form-grid">
+            <label class="field-label">项目标题<input id="projectTitleInput" class="text-input" /></label>
+            <label class="field-label">项目副标题<input id="projectSubtitleInput" class="text-input" /></label>
+            <label class="field-label full-span">媒体资源根路径
+              <input id="mediaBaseUrlInput" class="text-input" placeholder="例如 assets/" />
+            </label>
+          </div>
+          <p class="hint">全景图、展品图、音频放在 <code>assets/</code> 子文件夹；此处填根路径，各展厅与热点里填相对路径（如 <code>panoramas/room_01.jpg</code>）。</p>
+        </details>
+      </section>
+
+      <section class="panel-section">
+        <details open>
+          <summary class="section-title">当前展厅设置</summary>
+          <div class="form-grid">
+            <label class="field-label">展厅 ID<input id="roomIdInput" class="text-input" /></label>
+            <label class="field-label">展厅名称<input id="roomNameInput" class="text-input" /></label>
+            <label class="field-label">短名称<input id="roomShortNameInput" class="text-input" /></label>
+            <label class="field-label">主题<input id="roomThemeInput" class="text-input" /></label>
+            <label class="field-label full-span">全景图路径<textarea id="panoramaUrlInput" class="url-input" placeholder="相对路径如 panoramas/room_01.jpg，或完整 https://... URL"></textarea></label>
+            <p id="panoramaResolvedHint" class="hint" hidden style="word-break:break-all;"></p>
+            <label class="field-label full-span">背景音乐 / 环境音路径<input id="roomBgmInput" class="text-input" placeholder="相对路径如 audio/bgm.mp3，或 https://... URL" /></label>
+          </div>
+          <div class="button-row">
+            <button id="applyRoomBtn" class="primary-btn">保存展厅设置</button>
+            <label class="file-btn">
+              上传全景到 assets/
+              <input id="panoramaUploadInput" type="file" accept="image/jpeg,image/png,image/webp,image/bmp,image/tiff,.jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff" hidden />
+            </label>
+            <button id="duplicateRoomBtn" class="ghost-green-btn">复制展厅</button>
+            <button id="deleteRoomBtn" class="danger-btn">删除展厅</button>
+          </div>
+          <p class="hint">上传后自动写入 <code>assets/panoramas/</code> 并保存路径到 <code>data/gallery.json</code>。需先关联项目文件夹。</p>
+        </details>
+      </section>
+
+      <section class="panel-section">
+        <details open>
+          <summary class="section-title row-title">
+            <span>热点 / 信息页</span>
+            <span class="hotspot-add-btns">
+              <button id="addHotspotBtn" type="button" class="mini-btn">+ 热点</button>
+              <button id="addRoomLinkHotspotBtn" type="button" class="mini-btn">+ 展厅箭头</button>
+            </span>
+          </summary>
+          <div id="hotspotList" class="hotspot-list"></div>
+        </details>
+      </section>
+
+      <section class="panel-section">
+        <details open>
+          <summary class="section-title">当前热点编辑</summary>
+          <div id="hotspotEditor" class="hotspot-editor empty-editor">
+            <p class="hint">请选择或新增一个热点后，在这里编辑对应的信息页内容。</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="panel-section">
+        <details>
+          <summary class="section-title">JSON 管理</summary>
+          <div class="button-row stack">
+            <button id="linkProjectBtn" class="primary-btn full">关联项目文件夹</button>
+            <button id="saveDiskBtn" class="ghost-green-btn full">立即保存到本地</button>
+            <button id="exportJsonBtn" class="ghost-green-btn full">导出 JSON 备份</button>
+            <label class="file-btn full center">
+              导入 JSON
+              <input id="importJsonInput" type="file" accept="application/json,.json" hidden />
+            </label>
+            <button id="reloadDiskBtn" class="ghost-green-btn full">从本地重新加载</button>
+          </div>
+          <p id="diskSaveStatus" class="hint">双击 index.html 打开；首次编辑请点击「关联项目文件夹」。</p>
+          <p class="hint">数据写入 <code>data/gallery.json</code>；图片写入 <code>assets/panoramas/</code>、<code>assets/exhibits/</code>。请使用 Chrome 或 Edge。</p>
+        </details>
+      </section>
+    </aside>
+  </div>
+
+  <dialog id="editAuthDialog" class="auth-dialog">
+    <form id="editAuthForm">
+      <p class="auth-title">进入编辑模式</p>
+      <p class="auth-hint">修改展厅数据、侧栏文案与 JSON 需验证密码。</p>
+      <label class="auth-label">密码<input id="editAuthInput" type="password" class="auth-input" autocomplete="current-password" /></label>
+      <div class="auth-actions">
+        <button type="button" id="editAuthCancel" class="ghost-btn">取消</button>
+        <button type="submit" class="primary-btn">确认</button>
+      </div>
+      <p id="editAuthError" class="auth-error" hidden>密码错误，请重试。</p>
+    </form>
+  </dialog>
+
+  <dialog id="exhibitDialog" class="exhibit-dialog">
+    <button id="closeDialogBtn" class="dialog-close">×</button>
+    <div class="dialog-grid">
+      <div class="exhibit-image-wrap">
+        <img id="dialogImage" alt="展品图" />
+        <div id="dialogImagePlaceholder" class="image-placeholder">暂无展品图</div>
+      </div>
+      <div class="exhibit-content">
+        <p id="dialogType" class="eyebrow"></p>
+        <h2 id="dialogTitle"></h2>
+        <h3 id="dialogSubtitle"></h3>
+        <p id="dialogDescription"></p>
+        <div id="dialogInfoBlocks" class="info-blocks"></div>
+        <div id="dialogTags" class="tag-row"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="vendor/pannellum/build/pannellum.js"></script>
+  <script src="data/gallery.boot.js?v=20260614-panorama-fix"></script>
+  <script src="js/default-gallery-data.js"></script>
+  <script src="js/app.js?v=20260614-panorama-fix"></script>
+</body>
+</html>
